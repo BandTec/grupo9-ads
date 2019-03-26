@@ -5,13 +5,13 @@
 
 CREATE TABLE temperatura (
 idTemp int PRIMARY KEY,
-data data,
-hora hora,
+data date,
+hora time,
 valor int
 )
 
 CREATE TABLE geladeiras (
-ident Texto(40),
+ident varchar(40),
 idGeladeira int PRIMARY KEY,
 idMedicamento int,
 idUmid int,
@@ -24,14 +24,14 @@ idMedicamento int PRIMARY KEY,
 umidMin int,
 tempMin int,
 umidMax int,
-tipo Texto(40),
+tipo varchar(40),
 tempMAx int
 )
 
 CREATE TABLE umidade (
 idUmid int PRIMARY KEY,
-data data,
-hora hora,
+data date,
+hora time,
 valor int
 )
 
