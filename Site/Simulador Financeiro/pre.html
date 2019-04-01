@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simulador</title>
+
+    <style>
+    body {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>LOGO</h2>
+        <h1>TEXTINHO SHOW</h1>
+        Selecione seu porte:<p></p>
+<select>
+    <option value="">--selecione--</option>
+    <option value="1000">Pequeno</option>
+    <option value="2000">Médio</option>
+    <option value="3000">Grande</option>
+</select> <p></p>
+Quantidades de vacinas em estoque:<p></p>
+<input type="number" id="qtd"><p></p>
+Valor médio em estoque:<p></p>
+<input type="number" id="valor"><p></p>
+<button type="button" onclick="funcao()">Simular economia</button>
+    </form>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+function funcao(){
+    var x= Number (qtd.value) *0.70;
+    var y= Number (valor.value) *0.70;
+
+ 
+}
+</script>
