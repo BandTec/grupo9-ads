@@ -17,7 +17,7 @@
         <h2>LOGO</h2>
         <h1>TEXTINHO SHOW</h1>
         Selecione seu porte:<p></p>
-<select>
+<select id='investe'>
     <option value="">--selecione--</option>
     <option value="1000">Pequeno</option>
     <option value="2000">Médio</option>
@@ -34,9 +34,13 @@ Valor médio em estoque:<p></p>
 </html>
 <script>
 function funcao(){
-    var x= Number (qtd.value) *0.70;
-    var y= Number (valor.value) *0.70;
+    var x= Number (qtd.value) * 0.30;
+    var y= Number (valor.value) * 0.30;
+    var fun = ((x * 0.70) + (x * 0.25));
 
+    mensagem.innerHTML = `Adquirindo o nosso produto, com  ${investe.value} de investimento, é possível diminuir a perca
+    de ${x} vacinas e e valor em estoque de R$ ${y}. tendo economia de ${fun}.`
+     
  
 }
 </script>
