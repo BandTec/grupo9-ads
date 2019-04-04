@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> PharmaSensors | Login </title>
+    <link rel="stylesheet" href="estilologin.css">
+
+
+</head>
+
+<body>
+    <center>
+        <div class="foto">
+
+
+            <div class="form">
+                <h1 class="titulo">Entrar</h1>
+                <div class="conteudo">
+
+                    <form>
+
+                        <div>
+                            <img src="imagens/user.png" id="user">
+                        </div>
+                        <br>
+
+                        <input class="inputs" type="text" id="usuario" placeholder="Email de acesso">
+                        <br>
+                        <br>
+
+
+                        <input class="inputs" type="password" id="senha" placeholder="Senha">
+                        <br>
+                        <br>
+
+                        <button class="bt-entre" type="submit" onclick="validarLogin()"> Entrar </button>
+                        <br>
+                        <br>
+                        <p class="lembrar">
+                            <input type="checkbox">Lembrar-se de mim</p>
+                        <br>
+
+
+                        <p id="cadastro">
+                            <a href="#cadastrar" target="blank">
+                                <b>Quero me cadastrar</b>
+                            </a>
+                        </p><br>
+
+                        <p id="trocarSenha">
+                        <a href="#redefinirSenha" target="blank">
+                            <b>Esqueci minha senha</b>
+                        </a>
+                        </p>
+                        <br>
+                        <div id="div_aviso"></div>
+                </div>
+
+                </form>
+
+            </div>
+    </center>
+</body>
+
+<!-- OBS: COLOCAR HOVER NO BOTÃO ENTRAR;  -->
+
+</html>
+<script>
+    function validarLogin() {
+
+        if(usuario.value !="" && senha.value !="" ){
+            alert("entrou!");
+        }else{
+            alert("Insira um nome de usuário e senha!");
+        }
+    }
+</script>
