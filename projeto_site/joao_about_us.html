@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: arial;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            /*  flex-wrap: wrap;responsível (AJUDA) */
+            justify-content: space-around;
+            align-items: center;
+            min-height: 480px;
+        }
+
+
+        #div_esquerda {
+            width: 33%;
+            padding: 50px;
+            
+        }
+
+        #div_direita {
+            width: 33%;
+            padding: 50px;
+        }
+
+        #div_centro {
+            margin-top: 100px;
+
+        }
+
+        h3 {
+           margin-top: 50px; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <!-- pode usar outras tags como article ou section -->
+
+        <div id='div_esquerda'>
+
+            <h3>Quem somos?</h3>
+            <p>
+                Somos uma empresa que sabendo a necessidade do mercado, e a nossa estratégia  é trazer para nossos clientes
+                soluções de problemas como controle de temperatura e umidade no armazenamento de medicamentos.
+                Auemtando a sua
+                lucratividade.
+            </p>
+
+            <h3> Por que investir em monitoramento?</h3>
+            <p>
+                Devido a grande perca de medicamentos por falta de controle no armazenamento, que
+                chega a
+                $16 milhões por ano. Entende-se que a perca traz problemas dos mais distintos, tanto biológicos como
+                físicos. Com isso, é de suma importância ter um gerenciamento completo no armazenamento.
+            </p>
+        </div>
+
+        <div id='div_centro'>
+
+            <img id='logo' src='farmacia.jpg' style='width: 300px'>
+
+        </div>
+
+        <div id='div_direita'>
+            <h3>Como a PharmaSensors pode ajudar</h3>
+            <p>
+                Através de monitoramento em tempo real, 24h por dia. É possível monitorar e controlar os parâmetros
+                de
+                temperatura e umidade. Alertando também quando tiver uma variação de algum fator que esteja fora do range
+                de aceitabilidade dos valores pré-definidos.
+            </p>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
