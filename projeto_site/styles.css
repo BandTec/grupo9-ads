@@ -1,3 +1,7 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -11,19 +15,47 @@ background-color: aquamarine;
     background-color: #cccccc;
     background-image: url("https://www.promobit.com.br/blog/wp-content/uploads/2019/01/04150948/farmacia-online.jpg");
     position: relative;
-    padding: 0;
-    margin: 0;
     
+}
+ul {
+    list-style: none;
+    text-align: center;
 } 
+
+.login {
+   
+    display: inline;
+    position: fixed;
+    z-index: 1;
+    padding: 0;
+    right: 0;
+    
+}
+.login li{
+    
+    background-color: rgb(128, 128, 128, 0.5);
+    float: left;
+}
+.login li a{
+    display: block;
+    margin: 0;
+    padding: 10px;
+    height: 20px;  
+}
+
+.login a:hover{
+    background-color: rgb(255, 0, 0, 0.8);
+}
 
 .nav{
     
-    list-style:none;
-    margin-left: 500px;
-    margin-right: 500px;
-    text-align:center;
     padding: 0;
-    position: absolute;
+    position: fixed;
+    z-index: 1;
+    height: 20px;
+    left: 40%;
+    
+    
     
 }
 .nav li{
@@ -36,10 +68,36 @@ background-color: aquamarine;
     display: block;
     margin: 0;
     padding: 10px;
+    height: 20px;
    
 }
 
 .nav li a:hover{
+    background-color: rgb(255, 0, 0, 0.8);
+
+}
+.subir {
+   
+    display: inline;
+    position: fixed;
+    z-index: 20;
+    padding: 0;
+    right: 0;
+    bottom: 0;
+    
+}
+.subir li{
+    
+    background-color: rgb(128, 128, 128, 0.5);
+    float: left;
+}
+.subir li a{
+    display: block;
+    margin: 0;
+    padding: 10px;
+    height: 20px;  
+}
+.subir li a:hover{
     background-color: rgb(255, 0, 0, 0.8);
 
 }

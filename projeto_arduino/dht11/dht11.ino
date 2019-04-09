@@ -3,7 +3,7 @@
 
 #include <dht.h>
 
-#define dht_dpin 2 //Pino DATA do Sensor ligado na porta digital 2
+#define dht_dpin A2 //Pino DATA do Sensor ligado na porta digital 2
 
 dht DHT; //Inicializa o sensor
 
