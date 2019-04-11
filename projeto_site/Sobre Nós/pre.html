@@ -16,21 +16,24 @@
         body {
             text-align: center;
         }
-        h2{
-            padding:30px;
+
+        h2 {
+            padding: 30px;
         }
 
-        #corpo {
-            background-color: black;
-            height:550px;
+        .corpo {
+            background-image: url('simulador.jpg');
+            height: 550px;
             padding: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
         }
 
-        center {
-            background-color: black;
-        }
 
-        #conteudo {
+
+        .conteudo {
 
             background-color: rgba(32, 43, 53, 0.623);
             text-align: center;
@@ -43,20 +46,40 @@
             color: white;
         }
 
-        #porte {
+        .porte {
             margin-top: 5%;
         }
 
-        #inputone {
+        .inputone {
             margin-top: 3%;
         }
 
-        #inputtwo {
+        .inputtwo {
             margin-top: 3%;
         }
 
-        #botao {
+        .botao {
             margin-top: 1%;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .btn {
+            box-shadow: 0 3px 0 #f5f1f1a6; 
+        }
+
+        .btn:hover {
+            background-color: #f5f1f1a6;
+            box-shadow: 0 3px 0 #f5f1f1a6; 
+        }
+
+        .btn:active {
+            position: relative;
+            top: 3px;
+            box-shadow: none; 
         }
 
         #mensagem {
@@ -68,9 +91,9 @@
 <body>
 
     <h2>LOGO</h2>
-    <div id='corpo'>
+    <div class='corpo'>
         <center>
-            <form id='conteudo'>
+            <form class='conteudo'>
                 <p>
                     Segundo dados atuais, há uma perca aproximada de 30% de medicamentos. Isso ocorre devido ao descaso
                     do controle de fatores intrísecos do ambiente, tanto no transporte como armazenamento.
@@ -78,22 +101,22 @@
                     Trazendo
                     ao cliente um lucro final satisfatório.
                 </p>
-                <p id='porte'>Selecione seu porte:</p>
+                <p class='porte'>Selecione seu porte:</p>
                 <select id='investe'>
                     <option value="">--selecione--</option>
                     <option value="1000">Pequeno</option>
                     <option value="2000">Médio</option>
                     <option value="3000">Grande</option>
                 </select>
-                <p id='inputone'>Quantidades de vacinas em estoque:
+                <p class='inputone'>Quantidades de vacinas em estoque:
                     <p><input type="number" id="qtd"></p>
                 </p>
 
-                <p id='inputtwo'>Valor médio em estoque:
+                <p class='inputtwo'>Valor médio em estoque:
                     <p><input type="number" id="valor"></p>
                 </p>
 
-                <p><button type="button" onclick="funcao()" id='botao'>Simular economia</button></p>
+                <p><button type="button" class='botao btn' onclick="funcao()">Simular economia</button></p>
                 <div id="mensagem"></div>
             </form>
         </center>
@@ -108,7 +131,7 @@
         var fun = ((x * 0.70) + (x * 0.25));
 
         mensagem.innerHTML = `Adquirindo o nosso produto, com  ${investe.value} de investimento, é possível diminuir a perca
-    de ${x} vacinas e e valor em estoque de R$ ${y}. tendo economia de ${fun}.`
+    de ${x.toFixed(2)} vacinas e e valor em estoque de R$ ${y.toFixed(2)}. tendo economia de ${fun.toFixed(2)}.`
 
 
     }

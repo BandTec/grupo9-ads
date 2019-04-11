@@ -25,54 +25,73 @@
         #div_esquerda {
             width: 33%;
             padding: 50px;
-            
+
         }
 
         #primeiro {
             text-align: left;
             margin-bottom: 150px;
+            background-color: rgb(150, 248, 248); 
+           
         }
 
         #segundo {
             text-align: right;
             margin-top: 150px;
+            background-color:rgb(150, 248, 248);
+    
         }
 
         #terceiro {
             text-align: left;
             margin-bottom: 150px;
+            background-color: rgb(150, 248, 248);
         }
-    
+
 
         #quarto {
             text-align: right;
             margin-top: 150px;
+            background-color: rgb(150, 248, 248);
         }
 
-    
-        a { 
-            text-decoration: none; 
+
+        a {
+            text-decoration: none;
             color: black;
-            
         }
-        
+
 
         #div_direita {
             width: 33%;
             padding: 50px;
-            align-self: flex-start;  /* Alinhar no topo (centralizado, alinhado) */
+            align-self: flex-start;
+            /* Alinhar no topo (centralizado, alinhado) */
         }
 
         #div_centro {
             border-width: 150px;
             border-radius: 35px;
             margin-top: 100px;
-            border-style:solid;
+            border-style: solid;
             color: rgb(181, 249, 252);
         }
 
         h3 {
-           margin-top: 50px; 
+            margin-top: 50px;
+            background-color:rgb(150, 248, 248);
+            border-radius: 30px;
+        }
+
+        p {
+            background-color: rgb(150, 248, 248);
+        }
+        
+        button {
+            padding: 4px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -83,26 +102,34 @@
 
         <div id='div_esquerda'>
             <div id='primeiro'>
-            <h3>Quem somos?</h3>
-            <p>
-                Somos uma empresa que sabendo a necessidade do mercado, e a nossa estratégia  é trazer para nossos clientes
-                soluções de problemas como controle de temperatura e umidade no armazenamento de medicamentos.
-                Auemtando a sua
-                lucratividade.
-                <!-- Somos uma empresa do área da saúde que visa reduzir a perca de medicamentos na cadeia do frio, 
+                <h3>Quem somos?</h3>
+                <p>
+                    Somos uma empresa que sabendo a necessidade do mercado, e a nossa estratégia é trazer para nossos
+                    clientes
+                    soluções de problemas como controle de temperatura e umidade no armazenamento de medicamentos.
+                    Auemtando a sua
+                    lucratividade.
+                    <p>
+                        <button type='button' onclick='saber_mais_one ()'> SAIBA MAIS </button>
+                    </p>
+
+                    <!-- Somos uma empresa do área da saúde que visa reduzir a perca de medicamentos na cadeia do frio, 
                 aumentando a lucratividade. -->
-            </p>
+                </p>
             </div>
 
             <div id='segundo'>
-            <h3> Por que investir em monitoramento?</h3>
-            <p>
-                Devido a grande perca de medicamentos por falta de controle no armazenamento, que
-                chega a
-                $16 milhões por ano. Entende-se que a perca traz problemas dos mais distintos, tanto biológicos como
-                físicos. Com isso, é de suma importância ter um gerenciamento completo no armazenamento.
-            </p>
-           </div>
+                <h3> Por que investir em monitoramento?</h3>
+                <p>
+                    Devido a grande perca de medicamentos por falta de controle no armazenamento, que
+                    chega a
+                    $16 milhões por ano. Entende-se que a perca traz problemas dos mais distintos, tanto biológicos como
+                    físicos. Com isso, é de suma importância ter um gerenciamento completo no armazenamento.
+                    <p>
+                        <button type='button' onclick='saber_mais_two ()'> SAIBA MAIS </button>
+                    </p>
+                </p>
+            </div>
         </div>
 
         <div id='div_centro'>
@@ -115,20 +142,26 @@
 
         <div id='div_direita'>
             <div id='terceiro'>
-            <h3>Como a PharmaSensors pode ajudar</h3>
-            <p>
-                Através de monitoramento em tempo real, 24h por dia. É possível monitorar e controlar os parâmetros
-                de
-                temperatura e umidade. Alertando também quando tiver uma variação de algum fator que esteja fora do range
-                de aceitabilidade dos valores pré-definidos.
-            </p>
+                <h3>Como a PharmaSensors pode ajudar</h3>
+                <p>
+                    Através de monitoramento em tempo real, 24h por dia. É possível monitorar e controlar os parâmetros
+                    de
+                    temperatura e umidade. Alertando também quando tiver uma variação de algum fator que esteja fora do
+                    range
+                    de aceitabilidade dos valores pré-definidos.
+                    <p>
+                        <button type='button' onclick='saber_mais_three ()'> SAIBA MAIS </button>
+
+                    </p>
+
+                </p>
             </div>
 
             <div id='quarto'>
-            <h3> Simule o nosso produto para sua empresa</h3>
-            <p>
-                 <a href="pre.html">SIMULADOR FINANCEIRO!</a>
-            </p>
+                <h3> Simule o nosso produto para sua empresa</h3>
+                <p>
+                    <a href="pre.html">SIMULADOR FINANCEIRO!</a>
+                </p>
             </div>
         </div>
     </div>
@@ -137,3 +170,15 @@
 </body>
 
 </html>
+<script>
+    function saber_mais_one (){
+        alert (``)
+
+    }
+    function sbaer_mais_two (){
+        alert (``)
+    }
+    function sbaer_mais_three (){
+        alert (``)
+    }
+</script>
