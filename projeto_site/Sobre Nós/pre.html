@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simulador</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            text-align: center;
+        }
+        h2{
+            padding:30px;
+        }
+
+        #corpo {
+            background-color: black;
+            height:550px;
+            padding: 10px;
+        }
+
+        center {
+            background-color: black;
+        }
+
+        #conteudo {
+
+            background-color: rgba(32, 43, 53, 0.623);
+            text-align: center;
+            font-size: 0.5cm;
+            width: 50%;
+            height: 400px;
+            border-radius: 10px;
+            margin-top: 5%;
+            padding: 1.5%;
+            color: white;
+        }
+
+        #porte {
+            margin-top: 5%;
+        }
+
+        #inputone {
+            margin-top: 3%;
+        }
+
+        #inputtwo {
+            margin-top: 3%;
+        }
+
+        #botao {
+            margin-top: 1%;
+        }
+
+        #mensagem {
+            margin-top: 3%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>LOGO</h2>
+    <div id='corpo'>
+        <center>
+            <form id='conteudo'>
+                <p>
+                    Segundo dados atuais, há uma perca aproximada de 30% de medicamentos. Isso ocorre devido ao descaso
+                    do controle de fatores intrísecos do ambiente, tanto no transporte como armazenamento.
+                    Com isso o nosso produto visa a sanar essa deficiência inibindo uma perca consideravelmente alta.
+                    Trazendo
+                    ao cliente um lucro final satisfatório.
+                </p>
+                <p id='porte'>Selecione seu porte:</p>
+                <select id='investe'>
+                    <option value="">--selecione--</option>
+                    <option value="1000">Pequeno</option>
+                    <option value="2000">Médio</option>
+                    <option value="3000">Grande</option>
+                </select>
+                <p id='inputone'>Quantidades de vacinas em estoque:
+                    <p><input type="number" id="qtd"></p>
+                </p>
+
+                <p id='inputtwo'>Valor médio em estoque:
+                    <p><input type="number" id="valor"></p>
+                </p>
+
+                <p><button type="button" onclick="funcao()" id='botao'>Simular economia</button></p>
+                <div id="mensagem"></div>
+            </form>
+        </center>
+    </div>
+</body>
+
+</html>
+<script>
+    function funcao() {
+        var x = Number(qtd.value) * 0.30;
+        var y = Number(valor.value) * 0.30;
+        var fun = ((x * 0.70) + (x * 0.25));
+
+        mensagem.innerHTML = `Adquirindo o nosso produto, com  ${investe.value} de investimento, é possível diminuir a perca
+    de ${x} vacinas e e valor em estoque de R$ ${y}. tendo economia de ${fun}.`
+
+
+    }
+</script>
