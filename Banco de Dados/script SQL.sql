@@ -1,4 +1,4 @@
--- Geração de Modelo físico
+-- GeraÃ§Ã£o de Modelo fÃ­sico
 -- Sql ANSI 2003 - brModelo.
 
 
@@ -8,7 +8,7 @@ idTemp int PRIMARY KEY,
 data date,
 hora time,
 valor int
-)
+);
 
 CREATE TABLE geladeiras (
 ident varchar(40),
@@ -17,7 +17,7 @@ idMedicamento int,
 idUmid int,
 idTemp int,
 FOREIGN KEY(idTemp) REFERENCES temperatura (idTemp)
-)
+);
 
 CREATE TABLE medicamento (
 idMedicamento int PRIMARY KEY,
@@ -26,7 +26,7 @@ tempMin int,
 umidMax int,
 tipo varchar(40),
 tempMAx int
-)
+);
 
 CREATE TABLE umidade (
 idUmid int PRIMARY KEY,
@@ -35,5 +35,5 @@ hora time,
 valor int
 )
 
-ALTER TABLE geladeiras ADD FOREIGN KEY(idMedicamento) REFERENCES medicamento (idMedicamento)
-ALTER TABLE geladeiras ADD FOREIGN KEY(idUmid) REFERENCES umidade (idUmid)
+ALTER TABLE geladeiras ADD FOREIGN KEY(idMedicamento) REFERENCES medicamento (idMedicamento);
+ALTER TABLE geladeiras ADD FOREIGN KEY(idUmid) REFERENCES umidade (idUmid);

@@ -1,16 +1,16 @@
 create table medicamento (
 idMedicamento int primary key identity (1,1),
-tipo int,
-tempMax int,
-tempMin int,
-umiMax int,
-umiMin int);
+tipo varchar (30),
+tempMax float,
+tempMin float,
+umiMax float,
+umiMin float);
 
 select * from medicamento;
 
 insert into medicamento values
-(1, 25, 20, 30, 15),
-(2, 5, 0, 30, 15);
+('regular', 25, 20, 30, 15),
+('congenito', 5, 0, 30, 15);
 
 create table cliente (
 idCliente int primary key identity (1,1),
@@ -33,13 +33,13 @@ idGeladeira int primary key identity (1,1));
  select * from geladeira;
  
  insert into geladeira values
- (2, 1),
- (3, 1);
+ ('congenito', 1),
+ ('regular', 1);
 
  create table dados (
  idDados int primary key identity (1,1),
- valorTemp varchar (10),
- valorUmid varchar (10),
+ valorTemp float,
+ valorUmid float,
  dia date,
  hora time);
 
@@ -48,6 +48,6 @@ idGeladeira int primary key identity (1,1));
  select * from dados;
 
  insert into dados values
- (22, 20, 2019-03-09, 16.00, 4);
+ (22, 20, '2019-03-09', '16:00:00', 4);
 
 
