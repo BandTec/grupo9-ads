@@ -5,8 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="Bootstrap, Parallax, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Grayrids">
+
     <title> PharmaSensors | Login </title>
     <link rel="stylesheet" href="estilologin.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/line-icons.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/nivo-lightbox.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 
 </head>
@@ -17,13 +33,13 @@
 
 
             <div class="form">
-                <h1 class="titulo">Entrar</h1>
+                <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">Entrar </p>
                 <div class="conteudo">
 
                     <form>
 
                         <div>
-                            <img src="imagens/user.png" id="user">
+                            <img src="img/nurse_icon.jpg" id="user">
                         </div>
                         <br>
 
@@ -36,7 +52,10 @@
                         <br>
                         <br>
 
-                        <button class="bt-entre" type="submit" onclick="validarLogin()"> Entrar </button>
+                        <div class="plan-button">
+                            <a href="#" class="btn btn-common">Buy Now</a>
+                
+                        </div>
                         <br>
                         <br>
                         <p class="lembrar">
@@ -45,15 +64,15 @@
 
 
                         <p id="cadastro"></p>
-                            <a href="cadastro.html">
-                                <b>Quero me cadastrar</b>
-                            </a>
+                        <a href="cadastro.html">
+                            <b>Quero me cadastrar</b>
+                        </a>
                         </p><br>
 
                         <p id="trocarSenha">
-                        <a href="#redefinirSenha" target="blank">
-                            <b>Esqueci minha senha</b>
-                        </a>
+                            <a href="#redefinirSenha" target="blank">
+                                <b>Esqueci minha senha</b>
+                            </a>
                         </p>
                         <br>
                         <div id="div_aviso"></div>
@@ -71,9 +90,9 @@
 <script>
     function validarLogin() {
 
-        if(usuario.value !="" && senha.value !="" ){
+        if (usuario.value != "" && senha.value != "") {
             alert("entrou!");
-        }else{
+        } else {
             alert("Insira um nome de usuário e senha!");
         }
     }
