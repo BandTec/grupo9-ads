@@ -7,7 +7,7 @@
 }
 
 .font-poppins {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* ==========================================================================
@@ -83,7 +83,6 @@ hr,
 fieldset, legend {
   margin: 0;
   padding: 0;
-  color: #333
 }
 
 /**
@@ -126,21 +125,22 @@ button {
 }
 
 body {
- font-family: 'Poppins', sans-serif;
+  font-family: "Poppins",  sans-serif;
+  font-weight: 400;
   font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: 1px;
+  font-weight: 400;
 }
 
 h1 {
   font-size: 36px;
 }
 
+h2 {
+  font-size: 30px;
+}
 
 h3 {
   font-size: 24px;
@@ -162,15 +162,15 @@ h6 {
    #BACKGROUND
    ========================================================================== */
 .bg-blue {
-  background: #33b391;
+  background: #2c6ed5;
 }
 
 .bg-red {
-  background: #33b391;
+  background: #fa4251;
 }
 
 .bg-gra-01 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(#33b391));
+  background: -webkit-gradient(linear, left bottom, left top, from(fff), to(#33b391));
   background: -webkit-linear-gradient(bottom, #fff 0%, #33b391 100%);
   background: -moz-linear-gradient(bottom, #fff 0%, #33b391 100%);
   background: -o-linear-gradient(bottom, #fff 0%, #33b391 100%);
@@ -185,7 +185,7 @@ h6 {
 }
 
 .p-t-180 {
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .p-t-20 {
@@ -197,7 +197,7 @@ h6 {
 }
 
 .p-t-30 {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .p-b-100 {
@@ -230,7 +230,7 @@ h6 {
   display: inline-block;
   line-height: 40px;
   padding: 0 33px;
-  font-family: 'Poppins', 'sans-serif';
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   color: #fff;
   -webkit-transition: all 0.4s ease;
@@ -250,31 +250,31 @@ h6 {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
+  color: #fff;
 }
 
 .btn--green {
-  background: #33b391;
+  background: #33b391 ;
 }
 
 .btn--green:hover {
-  background: #61D2B4;
+  background:#61D2B4;
 }
 
 /* ==========================================================================
    #DATE PICKER
    ========================================================================== */
 td.active {
-  background-color: #000;
+  background-color: #2c6ed5;
 }
 
 input[type="date" i] {
   padding: 14px;
-
 }
 
 .table-condensed td, .table-condensed th {
   font-size: 14px;
-  font-family: "Roboto", 'sans-serif';
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
 
@@ -285,11 +285,11 @@ input[type="date" i] {
 
 .daterangepicker {
   border: none;
-  -webkit-box-shadow: 0px 8px 20px 0px #000(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 8px 20px 0px #000(0, 0, 0, 0.15);
-  box-shadow: 0px 8px 20px 0px #000(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   display: none;
-  border: 1px solid #000;
+  border: 1px solid #e0e0e0;
   margin-top: 5px;
 }
 
@@ -302,7 +302,7 @@ input[type="date" i] {
 }
 
 .daterangepicker .table-condensed th select {
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -324,13 +324,12 @@ input {
   width: 100%;
   font-size: 14px;
   font-family: inherit;
-
 }
 
 .input-icon {
   position: absolute;
   font-size: 18px;
-  color: #000;
+  color: #ccc;
   right: 8px;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -339,28 +338,24 @@ input {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   cursor: pointer;
-
 }
 
 .input-group {
   position: relative;
   margin-bottom: 33px;
-  border-bottom: solid 1px #333;
+  border-bottom: 1px solid #333;
 }
 
- .input--style-3 {  
+.input--style-3 {
   padding: 5px 0;
   font-size: 16px;
-  color: #333;
+  color: #ccc;
   background: transparent;
-  
-  
-}  
+}
 
 .input--style-3::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #333;
-  
 }
 
 .input--style-3:-moz-placeholder {
@@ -377,12 +372,12 @@ input {
 
 .input--style-3:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #333;
+  color: #ccc;
 }
 
 .input--style-3:-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #333;
+  color: #ccc;
 }
 
 /* ==========================================================================
@@ -407,9 +402,9 @@ input {
 .rs-select2 .select2-container .select2-selection--single .select2-selection__rendered {
   line-height: 36px;
   padding-left: 0;
-  color: #000;
+  color: #ccc;
   font-size: 16px;
-  font-family: 'Poppins';
+  font-family: inherit;
 }
 
 .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow {
@@ -437,10 +432,10 @@ input {
 }
 
 .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow:after {
-  font-family: "Poppins";
+  font-family: "Material-Design-Iconic-Font";
   content: '\f2f9';
   font-size: 18px;
-  color: #000;
+  color: #ccc;
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -460,10 +455,10 @@ input {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: 0px 8px 20px 0px #000(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 8px 20px 0px #000(0, 0, 0, 0.15);
-  box-shadow: 0px 8px 20px 0px #000(0, 0, 0, 0.15);
-  border: 1px solid #000;
+  -webkit-box-shadow: 0px px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
   margin-top: 5px;
   overflow: hidden;
 }
@@ -474,8 +469,10 @@ input {
 .title {
   font-size: 24px;
   color: #000;
-  font-weight: 400;
   margin-bottom: 36px;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 /* ==========================================================================
@@ -486,26 +483,27 @@ input {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  background: #000;
+  background: #fff;
 }
 
-.card-3 { 
-  background: #FFF;
+.card-3 {
+   background: #fff;/* cor do fundo preto */
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 8px 20px 0px #000(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 8px 20px 0px #000(0, 0, 0, 0.15);
-  box-shadow: 0px 8px 20px 0px #000(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   width: 100%;
   display: table;
- } /*FUNDO  */
+}
 
 .card-3 .card-heading {
   background: url("../img/bg-heading-03.jpg") top left/cover no-repeat;
   display: table-cell;
   width: 50%;
 }
+
 
 .card-3 .card-body {
   padding: 57px 65px;
