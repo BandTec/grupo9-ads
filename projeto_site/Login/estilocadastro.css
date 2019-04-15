@@ -5,7 +5,7 @@
   padding: 0px;  
 }
 a{
-    color: white;
+    color: #33b391;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10%px;
@@ -23,7 +23,7 @@ a{
 }
 .form {   
      /*background-color: darkcyan;*/
-     background-color:rgba(32, 43, 53, 0.623);
+     /* background-color:rgba(32, 43, 53, 0.623); */
     width: 30%;
     height: 450px;
     border-radius: 10px;
@@ -32,7 +32,7 @@ a{
 }
 .titulo{
   
-    color: white;
+    color:#33b391;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
 }
 .conteudo{
@@ -43,7 +43,7 @@ a{
     border-radius:4px;
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
-    background: white; 
+    background: #33b391; 
     text-align: left;
     width:180px;
     height: 20px;    
@@ -53,7 +53,7 @@ a{
    
     height: 40px;
     width:180px;
-    background-color: white;
+    background-color:  #33b391;
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
 }
