@@ -534,10 +534,10 @@ input {
    ========================================================================== */
    .cor{
 
-    color: #61D2B4;
+    color:  #33b391;
 }
 .cor:hover{ 
-    color: #33b391;
+    color:#61D2B4;
     border-color: #33b391;
     transition: all .50s ease-in-out;
     -moz-transition: all .50s ease-in-out;
