@@ -162,11 +162,11 @@ h6 {
    #BACKGROUND
    ========================================================================== */
 .bg-blue {
-  background: #2c6ed5;
+  background:#33b391;
 }
 
 .bg-red {
-  background: #fa4251;
+  background: #33b391;
 }
 
 .bg-gra-01 {
@@ -265,7 +265,7 @@ h6 {
    #DATE PICKER
    ========================================================================== */
 td.active {
-  background-color: #2c6ed5;
+  background-color: #33b391;
 }
 
 input[type="date" i] {
@@ -528,3 +528,20 @@ input {
     padding-bottom: 45px;
   }
 }
+
+/* ==========================================================================
+   #CADASTRO E TROCAR SENHA
+   ========================================================================== */
+   .cor{
+
+    color: #61D2B4;
+}
+.cor:hover{ 
+    color: #33b391;
+    border-color: #33b391;
+    transition: all .50s ease-in-out;
+    -moz-transition: all .50s ease-in-out;
+    -webkit-transition: all .50s ease-in-out;
+}
+
+   
