@@ -83,6 +83,7 @@ hr,
 fieldset, legend {
   margin: 0;
   padding: 0;
+  color:#333;
 }
 
 /**
@@ -349,7 +350,7 @@ input {
 .input--style-3 {
   padding: 5px 0;
   font-size: 16px;
-  color: #ccc;
+  color: #333;
   background: transparent;
 }
 
@@ -378,6 +379,12 @@ input {
 .input--style-3:-ms-input-placeholder {
   /* Microsoft Edge */
   color: #ccc;
+}
+.checkbox{
+  margin: 0%;
+  padding-left: 0%;
+  width: 5%;
+
 }
 
 /* ==========================================================================

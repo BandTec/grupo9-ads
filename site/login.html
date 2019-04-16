@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <!-- Required meta tags-->
@@ -57,21 +57,19 @@
                     <h2 class="title">ENTRAR</h2>
                     <form method="POST">
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="name">
+                            <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="name"
+                                id="email" required data-error="Por favor informe seu nome">
                         </div>
 
                         <div class="input-group">
-                            <input class="input--style-3" type="password" placeholder="Senha" name="email">
+                            <input class="input--style-3" type="password" placeholder="Senha" name="email" id="senha"
+                                required data-error="Por favor informe a senha">
                         </div>
-
+                       <input type="checkbox" class="checkbox"> Lembrar-se de mim <br>
                         <div class="p-t-10">
-                            <button class="btn btn--pill btn--green" type="submit">Entrar</button>
-                        </div>
-                        <div>
-                        <p class="section-subtitle"><input type="checkbox"> Lembrar-se de mim </p>
-                        <br>
-
-
+                            <button class="btn btn--pill btn--green" type="submit" onclick="validar()">Entrar</button>
+                        </div> <br>
+                            
                         <p class="cor"></p>
                         <a href="cadastro.html">
                             <b>Quero me cadastrar</b>
@@ -106,3 +104,9 @@
 
 </html>
 <!-- end document-->
+
+<!-- Inicio da valiação do login -->
+
+<script>
+
+</script>
