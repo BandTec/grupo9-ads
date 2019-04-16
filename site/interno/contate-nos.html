@@ -106,9 +106,55 @@
 
 
 
-      <div class="content">
-        <div class="container-fluid">
           <!-- your content here -->
+
+
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="card">
+                    <div class="card-header card-header-primary">
+                      <h4 class="card-title">Está com problemas?</h4>
+                      <p class="card-category">Entre em contato conosco!</p>
+                    </div>
+                  <div class="card-body">
+                    <form>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Nome</label>
+                              <input type="email" class="form-control">
+                            </div>
+                          </div>
+
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Email</label>
+                                <input type="email" class="form-control">
+                              </div>
+                            </div>
+
+                           <!-- <div class="row"> -->
+                                <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label class="bmd-label-floating">Digite sua mensagem </label>
+                                      <textarea class="form-control" rows="5"></textarea>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                   <button type="submit" class="btn btn-primary pull-right" onclick="mensagem1()">Enviar</button>
+                    </form>
+
+
+
+
+
+
+
+
+
         </div>
       </div>
       <footer class="footer">
@@ -346,5 +392,10 @@
     md.initDashboardPageCharts();
 
   });
+</script>
+<script>
+function mensagem1(){
+  alert("Sua mensagem foi enviada com sucesso!");
+}
 </script>
 </html>
