@@ -1,3 +1,6 @@
+create database projeto;
+use projeto;
+
 create table medicamentos(
     idMedicamento   int primary key,
     tipo            varchar(30),
@@ -65,10 +68,21 @@ alter table dados add foreign key (fkGeladeira) references
 
 select * from geladeira;
 select* from dados;
+
+desc dados;
 insert into dados values
-(1,1,30,'2014-04-12','16:00',100),
-(2,2,30,'2014-04-12','16:00',101),
-(3,1,30,'2014-04-12','16:00',102);
+(1,'1','30','2014-04-12','16:00:00',100),
+(2,'2','30','2014-04-12','16:00:00',101),
+(3,'1','30','2014-04-12','16:00:00',102);
+
+-- Trás as informações da geladeira, o nome do Usuário, o tipo de medicamento na geladeira, a temperatura permitida
+-- e a temperatuda que está atualmente
+select g.*, u.nome, m.tipo as 'Tipo Medicamento' , m.tempMax as 'Temperatura Máxima', d.temp as 'Temperatura Atual'	
+		from geladeira as g, usuario as u, medicamentos as m, dados as d
+        where g.idGeladeira = d.fkGeladeira
+        and u.idUser = g.fkUser
+        and m.idMedicamento = g.fkMedicamento ; 
+
 
 
 
