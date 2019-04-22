@@ -28,6 +28,8 @@ insert into usuario values
 select * from usuario;
 select * from medicamentos;
 
+update medicamentos set tipo = 'congenito' where idMedicamento in (1020,1030,1040);
+
 
 create table geladeira(
     idGeladeira int primary key,
@@ -66,6 +68,8 @@ insert into dados values
 (1,1,30,'2014-04-12','16:00',100),
 (2,2,30,'2014-04-12','16:00',101),
 (3,1,30,'2014-04-12','16:00',102);
+
+
 
 
 
