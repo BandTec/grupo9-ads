@@ -34,6 +34,7 @@ select * from medicamentos;
 
 create table geladeira(
     idGeladeira int primary key,
+    apelido varchar(20),
     fkUser  int,
     fkMedicamento   int,
     foreign key (fkUser) references usuario(idUser),
