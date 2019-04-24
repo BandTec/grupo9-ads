@@ -17,9 +17,9 @@ void loop()
 {
   DHT.read11(dht_dpin); //Lê as informações do sensor
   //Serial.print("Umidade = ");
-  Serial.print(DHT.temperature);
-  Serial.print(",");
-  Serial.println(DHT.humidity);
+  Serial.println(DHT.temperature);
+//  Serial.print(",");
+  //Serial.println(DHT.humidity);
 
   //Serial.print("Temperatura = ");
   
