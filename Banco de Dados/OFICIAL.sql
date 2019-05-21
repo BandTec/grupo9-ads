@@ -76,5 +76,3 @@ select g.*, u.nome, m.tipo as 'Tipo Medicamento' , m.tempMax as 'Temperatura Má
         where g.idGeladeira = d.fkGeladeira
         and u.idUser = g.fkUser
         and m.idMedicamento = g.fkMedicamento ; 
-
-
