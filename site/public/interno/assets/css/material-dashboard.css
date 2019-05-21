@@ -16643,7 +16643,7 @@ label {
 }
 
 .card .card-category {
-  margin-top: 10px;
+  margin-top: 100px;
 }
 
 .card .card-category .material-icons {
@@ -17320,7 +17320,9 @@ label {
 
 .card-stats .card-header+.card-footer {
   border-top: 1px solid #eee;
-  margin-top: 20px;
+  margin-top: 0px;
+ 
+  
 }
 
 .card-stats .card-header.card-header-icon i {

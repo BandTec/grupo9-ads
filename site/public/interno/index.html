@@ -3,6 +3,8 @@
 
 <head>
   <title>PharmaSensors</title>
+  <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -43,18 +45,7 @@
               <p>Tempo Real</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="historico.html">
-              <i class="material-icons">restore</i>
-              <p>Histórico</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="conta.html">
-              <i class="material-icons">perm_identity</i>
-              <p>Conta</p>
-            </a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="contate-nos.html">
               <i class="material-icons">contact_phone</i>
@@ -111,15 +102,19 @@
           <!-- your content here -->
 
           <!-- aqui começa os cards da parte de cima da página -->
-          <div class="row">
+          <div class="row" >
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
+                <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
                     <i class="material-icons">ac_unit</i>
                   </div>
+                  <p class="card-category"><b>Med_Comum</b></p>
                   <p class="card-category">Temperatura</p>
-                  <h3 class="card-title">19°C
+                  <h3 class="card-title">21°C
+                  </h3>
+                  <p class="card-category">Umidade</p>
+                  <h3 class="card-title">60%
                   </h3>
                 </div>
                 <div class="card-footer">
@@ -129,14 +124,92 @@
                 </div>
               </div>
             </div>
+
+
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">invert_colors</i>
+                      <i class="material-icons">ac_unit</i>
                   </div>
+                  <p class="card-category"><b>Med_Comum</b></p>
+                  <p class="card-category">Temperatura</p>
+                  <h3 class="card-title">22°C
+                  </h3>
                   <p class="card-category">Umidade</p>
-                  <h3 class="card-title">68%</h3>
+                  <h3 class="card-title">50%
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                      <i class="material-icons">check_circle</i> dentro do limite
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">info_outline</i>
+                  </div>
+                  <p class="card-category"><b>Med_Imuno</b></p>
+                  <p class="card-category">Temperatura</p>
+                  <h3 class="card-title">5°C
+                  </h3>
+                  <p class="card-category">Umidade</p>
+                  <h3 class="card-title">63%
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                      <i class="material-icons">check_circle</i> dentro do limite
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">timeline</i>
+                  </div>
+                  <p class="card-category"><b>Med_Imuno</b></p>
+                  <p class="card-category">Temperatura</p>
+                  <h3 class="card-title">6°C
+                  </h3>
+                  <p class="card-category">Umidade</p>
+                  <h3 class="card-title">58%
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                      <i class="material-icons">check_circle</i> dentro do limite
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row" >
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">ac_unit</i>
+                  </div>
+                  <p class="card-category"><b>Insulina</b></p>
+                  <p class="card-category">Temperatura</p>
+                  <h3 class="card-title">-15°C
+                  </h3>
+                  <p class="card-category">Umidade</p>
+                  <h3 class="card-title">52%
+                  </h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -145,34 +218,71 @@
                 </div>
               </div>
             </div>
+
+
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
+                <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
+                      <i class="material-icons">ac_unit</i>
                   </div>
-                  <p class="card-category">Problemas</p>
-                  <h3 class="card-title">2</h3>
+                  <p class="card-category"><b>Insulina</b></p>
+                  <p class="card-category">Temperatura</p>
+                  <h3 class="card-title">-10°C
+                  </h3>
+                  <p class="card-category">Umidade</p>
+                  <h3 class="card-title">57%
+                  </h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">local_offer</i> reportados nas últimas semanas
+                      <i class="material-icons">check_circle</i> dentro do limite
                   </div>
                 </div>
               </div>
             </div>
+
+
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
+                <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">timeline</i>
+                    <i class="material-icons">info_outline</i>
                   </div>
-                  <p class="card-category">Tempo Real</p>
-                  <h3 class="card-title">+245</h3>
+                  <p class="card-category"><b>Vacinas</b></p>
+                  <p class="card-category">Temperatura</p>
+                  <h3 class="card-title">-13°C
+                  </h3>
+                  <p class="card-category">Umidade</p>
+                  <h3 class="card-title">59%
+                  </h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">update</i> dados não vistos
+                      <i class="material-icons">check_circle</i> dentro do limite
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">timeline</i>
+                  </div>
+                  <p class="card-category"><b>Vacinas</b></p>
+                  <p class="card-category">Temperatura</p>
+                  <h3 class="card-title">-11°C
+                  </h3>
+                  <p class="card-category">Umidade</p>
+                  <h3 class="card-title">60%
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                      <i class="material-icons">check_circle</i> dentro do limite
                   </div>
                 </div>
               </div>
@@ -191,8 +301,8 @@
 
 
  
-
-      <!-- RODAPÉ COMEÇA AQUI MANA -->
+<!-- 
+       RODAPÉ COMEÇA AQUI MANA 
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
@@ -205,7 +315,7 @@
           <div class="copyright float-right">
             RODAPÉ DIREITA
           </div>
-          <!-- RODPÉ COLOCA AQUI MANA -->
+          RODPÉ COLOCA AQUI MANA -->
 
         </div>
       </footer>
