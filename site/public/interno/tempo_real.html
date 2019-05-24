@@ -13,9 +13,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/estilo_tempo_real.css">
 </head>
 
-<body>
+<body onload="atualizarGrafico()">
   <div class="wrapper ">
     <!-- AQUI COMEÇA O MENU LATERAL -->
     <div class="sidebar" data-color="" data-background-color="black">
@@ -43,19 +44,6 @@
               <p>Tempo Real</p>
             </a>
 
-
-            <ul class="nav-subitem">
-              <a class="nav-link" href="tempo_real.html">
-                <i class="material-icons">ac_unit</i>
-                <p>Temperatura</p>
-              </a>
-            </ul>
-            <ul class="nav-item">
-              <a class="nav-link" href="umidade.html">
-                <i class="material-icons">invert_colors</i>
-                <p>Umidade</p>
-              </a>
-            </ul>
 
 
           </li>
@@ -117,24 +105,36 @@
         </div>
       </nav>
       <!-- End Navbar -->
+
       <div class="content">
         <div class="container-fluid">
-            <canvas id="primeiroGrafico"></canvas>
+
+            <div class="div_botoes">
+              <button class="botao" type="button" onclick="med_comum()">
+                Medicamentos Comuns
+              </button> 
+              <button class="botao" type="button" onclick="vacinas()">
+                Vacinas
+              </button>
+              <button class="botao" type="button" onclick="imunobiologicos()">
+                Imunobiológicos
+              </button>
+            </div>
+            <br><br><br>
+
+            <div id="graf_comum">
+              <canvas id="canvas_grafico"></canvas>
+            </div>            
+            <div id="graf_vac">
+              <canvas></canvas>
+            </div>
+            <div id="graf_imun">
+              <canvas></canvas>
+            </div>
+
+
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                RODAPÉ ESQUERDA
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            RODAPÉ DIREITA
-          </div>
-          <!-- RODPÉ COLOCA AQUI MANA -->
 
         </div>
       </footer>
@@ -178,13 +178,12 @@
 <!-- Library for adding dinamically elements -->
 <script src="./assets/js/plugins/arrive.min.js"></script>
 <!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Chartist JS -->
 <script src="./assets/js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
 <script src="./assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="./assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+<!-- <script src="./assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script> -->
 <script>
   $(document).ready(function() {
     $().ready(function() {
@@ -364,3 +363,24 @@
   });
 </script>
 </html>
+<script>
+  function med_comum(){
+    console.log('veio aqui');
+    graf_comum.style.display = 'inline';
+    graf_imun.style.display = 'block';
+    graf_vac.style.display = 'block';
+  }
+
+  function imunobiologicos(){
+    graf_imun.style.display = 'inline';
+    graf_vac.style.display = 'block';
+    graf_comum.style.display = 'block';
+  }
+
+  function vacinas(){
+    graf_vac.style.display = 'inline';
+    graf_imun.style.display = 'block';
+    graf_comum.style.display = 'block';
+  }
+
+</script>
