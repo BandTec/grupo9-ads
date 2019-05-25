@@ -1,6 +1,6 @@
 s
-let graficoUmidade = document.getElementById('graficoUmidade').getContext('2d');
-let umid = new Chart(graficoUmidade, {
+let  graf_comum = document.getElementById('graf_comum').getContext('2d');
+let umid = new Chart( graf_comum, {
     type: 'line',
     data: {
         labels:[date],

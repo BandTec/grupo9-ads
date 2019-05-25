@@ -25,57 +25,43 @@
 
       Tip 2: you can also add an image using data-image tag
   -->
-      <div class="logo">
-        <a href="template.html" class="simple-text logo-mini">
-          PharmaSensors
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
+  <div class="logo">
+    <a href="template.html" class="simple-text logo-mini">
+      PharmaSensors
+    </a>
+  </div>
+  <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item active">
             <a class="nav-link" href="index.html">
               <i class="material-icons">dashboard</i>
               <p>Início</p>
             </a>
           </li>
-          <li class="nav-item active  ">
+          <li class="nav-item">
             <a class="nav-link" href="tempo_real.html">
               <i class="material-icons">assessment</i>
               <p>Tempo Real</p>
             </a>
-
-
-
           </li>
-          <li class="nav-item active  ">
-            <a class="nav-link" href="historico.html">
-              <i class="material-icons">restore</i>
-              <p>Histórico</p>
-            </a>
-          </li>
-          <li class="nav-item active  ">
-            <a class="nav-link" href="conta.html">
-              <i class="material-icons">perm_identity</i>
-              <p>Conta</p>
-            </a>
-          </li>
-          <li class="nav-item active  ">
+         
+          <li class="nav-item">
             <a class="nav-link" href="contate-nos.html">
               <i class="material-icons">contact_phone</i>
               <p>Contate-nos</p>
             </a>
           </li>
-          <li class="nav-item active  ">
+          <li class="nav-item">
               <a class="nav-link" href="../index.html">
                 <i class="material-icons">power_settings_new</i>
                 <p>Sair</p>
               </a>
             </li>
-          <!-- your sidebar here -->
-          <!-- PÕE AS COISA DO MANU LATERAL AQUI> -->
-        </ul>
-      </div>
-    </div>
+      <!-- your sidebar here -->
+      <!-- PÕE AS COISA DO MANU LATERAL AQUI> -->
+    </ul>
+  </div>
+</div>
     <div class="main-panel">
       <!-- Navbar, OU SEJA, MENU LÁ DE CIMA (NÃO O LATERAL) -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -122,16 +108,21 @@
             </div>
             <br><br><br>
 
-            <div id="graf_comum">
-              <canvas id="canvas_grafico"></canvas>
-            </div>            
-            <div id="graf_vac">
-              <canvas></canvas>
-            </div>
-            <div id="graf_imun">
-              <canvas></canvas>
-            </div>
-
+        
+            <div class="content">
+              <div class="container-fluid">
+                  <canvas id="graficoUmidade"></canvas>
+              </div>
+            </div>    
+            <div class="content">
+              <div class="container-fluid">
+                  <canvas id="graf_vac"></canvas>
+              </div>       
+              <div class="content">
+                <div class="container-fluid">
+                    <canvas id="graf_imun"></canvas>
+                </div>
+    
 
         </div>
       </div>
@@ -145,12 +136,13 @@
 <!-- SCRIPTS DO GRAFICO -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 <script src="./assets/js/grafico.js"></script>
-
+<script src="./assets/js/geladeira1_umid.js"></script>
 
 <script src="./assets/js/core/jquery.min.js"></script>
 <script src="./assets/js/core/popper.min.js"></script>
 <script src="./assets/js/core/bootstrap-material-design.min.js"></script>
 <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!-- Plugin for the momentJs  -->
 <!-- Plugin for the momentJs  -->
 <script src="./assets/js/plugins/moment.min.js"></script>
 <!--  Plugin for Sweet Alert -->
@@ -178,12 +170,13 @@
 <!-- Library for adding dinamically elements -->
 <script src="./assets/js/plugins/arrive.min.js"></script>
 <!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Chartist JS -->
 <script src="./assets/js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
 <script src="./assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-<!-- <script src="./assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script> -->
+<script src="./assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
 <script>
   $(document).ready(function() {
     $().ready(function() {
@@ -364,23 +357,23 @@
 </script>
 </html>
 <script>
-  function med_comum(){
-    console.log('veio aqui');
-    graf_comum.style.display = 'inline';
-    graf_imun.style.display = 'block';
-    graf_vac.style.display = 'block';
-  }
+  // function med_comum(){
+  //   console.log('veio aqui');
+  //   graf_comum.style.display = 'inline';
+  //   graf_imun.style.display = 'block';
+  //   graf_vac.style.display = 'block';
+  // }
 
-  function imunobiologicos(){
-    graf_imun.style.display = 'inline';
-    graf_vac.style.display = 'block';
-    graf_comum.style.display = 'block';
-  }
+  // function imunobiologicos(){
+  //   graf_imun.style.display = 'inline';
+  //   graf_vac.style.display = 'block';
+  //   graf_comum.style.display = 'block';
+  // }
 
-  function vacinas(){
-    graf_vac.style.display = 'inline';
-    graf_imun.style.display = 'block';
-    graf_comum.style.display = 'block';
-  }
+  // function vacinas(){
+  //   graf_vac.style.display = 'inline';
+  //   graf_imun.style.display = 'block';
+  //   graf_comum.style.display = 'block';
+  // }
 
 </script>
