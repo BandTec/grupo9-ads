@@ -50,12 +50,12 @@
                     <h2 class="title">ENTRAR</h2>
                     <form id="form_login" method="post" onsubmit="return entrar()">
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="name"
+                            <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="email"
                                 id="email" required data-error="Por favor informe seu nome">
                         </div>
 
                         <div class="input-group">
-                            <input class="input--style-3" type="password" placeholder="Senha" name="email"
+                            <input class="input--style-3" type="password" placeholder="Senha" name="senha"
                                 required data-error="Por favor informe a senha">
                         </div>
                        <input type="checkbox" class="checkbox"> Lembrar-se de mim <br>
@@ -94,38 +94,68 @@
 
 <script>
     verificarAutenticacao();
-
-function verificarAutenticacao() {
-    if (sessionStorage.usuario_bandtec != undefined) {
-        window.location.href = './interno/index.html';
-    }
-}
-
-function entrar() {
-    aguardar();
-    var formulario = new URLSearchParams(new FormData(form_login));
-    fetch("/usuarios/entrar", {
-        method: "POST",
-        body: formulario
-    }).then(function (response) {
-        
-        if (response.ok) {
-
-            response.json().then(function (resposta) {
-
-                sessionStorage.usuario_bandtec = resposta.nome;
-                verificarAutenticacao();
-
-            });
-        } else {
-
-            console.log('Erro de login!');
-            finalizar_aguardar();
+    function verificarAutenticacao() {
+        if (sessionStorage.usuario_bandtec != undefined) {
+            window.location.href = './interno/index.html';
         }
-    });
+    }
 
-    return false;
-}
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/entrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                response.json().then(function (resposta) {
+
+                    sessionStorage.usuario_bandtec = resposta.nome;
+                    verificarAutenticacao();
+
+                });
+            } else {
+
+                console.log('Erro de login!');
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+// function verificarAutenticacao() {
+//     if (sessionStorage.usuario_bandtec != undefined) {
+//         window.location.href = './interno/index.html';
+//     }
+// }
+
+// function entrar() {
+//     aguardar();
+//     var formulario = new URLSearchParams(new FormData(form_login));
+//     fetch("/usuarios/entrar", {
+//         method: "POST",
+//         body: formulario
+//     }).then(function (response) {
+        
+//         if (response.ok) {
+
+//             response.json().then(function (resposta) {
+
+//                 sessionStorage.usuario_bandtec = resposta.nome;
+//                 verificarAutenticacao();
+
+//             });
+//         } else {
+
+//             console.log('Erro de login!');
+//             finalizar_aguardar();
+//         }
+//     });
+
+//     return false;
+// }
 
 function aguardar() {
     btn_entrar.disabled = true;
