@@ -111,7 +111,7 @@
         
             <div class="content">
               <div class="container-fluid">
-                  <canvas id="graficoUmidade"></canvas>
+                  <canvas id="graf_comum"></canvas>
               </div>
             </div>    
             <div class="content">
@@ -123,7 +123,6 @@
                     <canvas id="graf_imun"></canvas>
                 </div>
     
-
         </div>
       </div>
 
@@ -137,6 +136,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 <script src="./assets/js/grafico.js"></script>
 <script src="./assets/js/geladeira1_umid.js"></script>
+<script src="./assets/js/geladeira2_umid.js"></script>
+<script src="./assets/js/geladeira3_umid.js"></script>
 
 <script src="./assets/js/core/jquery.min.js"></script>
 <script src="./assets/js/core/popper.min.js"></script>
@@ -357,23 +358,23 @@
 </script>
 </html>
 <script>
-  // function med_comum(){
-  //   console.log('veio aqui');
-  //   graf_comum.style.display = 'inline';
-  //   graf_imun.style.display = 'block';
-  //   graf_vac.style.display = 'block';
-  // }
+  function med_comum(){
+    console.log('veio aqui');
+    graf_comum.style.display = 'inline';
+    graf_imun.style.display = 'block';
+    graf_vac.style.display = 'block';
+  }
 
-  // function imunobiologicos(){
-  //   graf_imun.style.display = 'inline';
-  //   graf_vac.style.display = 'block';
-  //   graf_comum.style.display = 'block';
-  // }
+  function imunobiologicos(){
+    graf_imun.style.display = 'inline';
+    graf_vac.style.display = 'block';
+    graf_comum.style.display = 'block';
+  }
 
-  // function vacinas(){
-  //   graf_vac.style.display = 'inline';
-  //   graf_imun.style.display = 'block';
-  //   graf_comum.style.display = 'block';
-  // }
+  function vacinas(){
+    graf_vac.style.display = 'inline';
+    graf_imun.style.display = 'block';
+    graf_comum.style.display = 'block';
+  }
 
 </script>

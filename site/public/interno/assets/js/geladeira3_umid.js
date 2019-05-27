@@ -1,6 +1,6 @@
 
-let graf_comum = document.getElementById('graf_comum').getContext('2d');
-let umid = new Chart(graf_comum, {
+let graf_imun = document.getElementById('graf_imun').getContext('2d');
+let umid = new Chart(graf_imun, {
     type: 'line',
     data: {
         labels:[date],

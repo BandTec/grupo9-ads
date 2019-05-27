@@ -1,4 +1,4 @@
-s
+
 let graficoUmidade = document.getElementById('graficoUmidade').getContext('2d');
 let umid = new Chart(graficoUmidade, {
     type: 'line',
