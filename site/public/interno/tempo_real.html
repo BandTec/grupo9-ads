@@ -52,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="../index.html">
+              <a class="nav-link" href="../index.html" onclick="logoff()">
                 <i class="material-icons">power_settings_new</i>
                 <p>Sair</p>
               </a>
@@ -355,6 +355,12 @@
     md.initDashboardPageCharts();
 
   });
+</script>
+<script>
+ function logoff() {
+  sessionStorage.removeItem('usuario_bandtec');
+  verificarAutenticacao();
+}
 </script>
 </html>
 <script>
