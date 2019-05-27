@@ -11,9 +11,9 @@ router.post('/entrar', function (req, res, next) {
     var login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
     var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login
     if (login == undefined || senha == undefined) {
-      throw new Error(`Dados de login não chegaram completos: ${email} / ${senha}`);
+      throw new Error(`Dados de login não chegaram completos: ${login} / ${senha}`);
     }
-    return banco.sql.query(`select * from usuario where email='${email}' and senha='${senha}'`);
+    return banco.sql.query(`select * from usuario where email='${login}' and senha='${senha}'`);
   }).then(consulta => {
 
     console.log(`Usuários encontrados: ${JSON.stringify(consulta.recordset)}`);
