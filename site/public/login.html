@@ -48,19 +48,19 @@
 
                 <div class="card-body">
                     <h2 class="title">ENTRAR</h2>
-                    <form method="POST">
+                    <form id="form_login" method="post" onsubmit="return entrar()">
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="name"
                                 id="email" required data-error="Por favor informe seu nome">
                         </div>
 
                         <div class="input-group">
-                            <input class="input--style-3" type="password" placeholder="Senha" name="email" id="senha"
+                            <input class="input--style-3" type="password" placeholder="Senha" name="email"
                                 required data-error="Por favor informe a senha">
                         </div>
                        <input type="checkbox" class="checkbox"> Lembrar-se de mim <br>
                         <div class="p-t-10">
-                            <button id="botao" class="btn btn--pill btn--green"onclick="validar()">Entrar</button>
+                            <button id="btn_entrar" class="btn btn--pill btn--green">Entrar</button>
                         </div> <br>
                             
                         <!-- <p class="cor"></p>
@@ -93,15 +93,47 @@
 
 
 <script>
-    function validar(){
-        var mail = (email.value);
-        var senh = (senha.value);
-        if (mail == "pharma@teste.com" && senh == "123456")
-        {
-            window.open("./interno/index.html");
-        }
-        else{
-            alert("Login e Senha Incorretos");
-        }
+    verificarAutenticacao();
+
+function verificarAutenticacao() {
+    if (sessionStorage.usuario_bandtec != undefined) {
+        window.location.href = './interno/index.html';
     }
+}
+
+function entrar() {
+    aguardar();
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/entrar", {
+        method: "POST",
+        body: formulario
+    }).then(function (response) {
+        
+        if (response.ok) {
+
+            response.json().then(function (resposta) {
+
+                sessionStorage.usuario_bandtec = resposta.nome;
+                verificarAutenticacao();
+
+            });
+        } else {
+
+            console.log('Erro de login!');
+            finalizar_aguardar();
+        }
+    });
+
+    return false;
+}
+
+function aguardar() {
+    btn_entrar.disabled = true;
+    
+}
+
+function finalizar_aguardar() {
+    btn_entrar.disabled = false;
+   
+}
 </script>
