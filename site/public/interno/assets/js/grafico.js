@@ -101,14 +101,14 @@ function atualizarGrafico(){
                     //ifizinho para nao deixar a temperaturazinha ultrapassar 6 registros
                     if(t1.data.datasets[0].data.length >= 6){
                         //horas
-                        t1.data.label.shift();
-                        t1.data.label.push(registro.hora);
+                        t1.data.labels.shift();
+                        t1.data.labels.push(registro.hora);
                         //temperatura e umidade
                         t1.data.datasets[0].data.shift();
                         t1.data.datasets[0].data.push(registro.temp);
                     }
                     else{
-                        t1.data.label.push(registro.hora);
+                        t1.data.labels.push(registro.hora);
                         t1.data.datasets[0].data.push(registro.temp);
                     }
 
@@ -117,14 +117,14 @@ function atualizarGrafico(){
                     t1.update();
 
                     if(t2.data.datasets[0].data.length >= 6){
-                        t2.data.label.shift();
-                        t2.data.label.push(registro.hora);
+                        t2.data.labels.shift();
+                        t2.data.labels.push(registro.hora);
                         t2.data.datasets[0].data.shift();
                         t2.data.datasets[0].data.push(registro.umid);
                         
                     }
                     else{
-                        t2.data.label.push(registro.hora);
+                        t2.data.labels.push(registro.hora);
                         t2.data.datasets[0].data.push(registro.umid);
                     }
 
