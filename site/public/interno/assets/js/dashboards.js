@@ -29,7 +29,7 @@ function atualizarGeladeira1(){
                 console.log(resposta);
                 t1.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u1.innerHTML = `${resposta.umidade}%`;
-                if(resposta.temperatura < 3,5 || resposta.temperatura >6,5){
+                if(resposta.temperatura < 3.5 || resposta.temperatura > 6.5){
                     imuno.classList.toggle('card-header card-header-warning card-header-icon');                     s_imuno.innerHTML = `Cuidado! Chegando ao Limite!`;
                     s_imuno.style.color = 'purple';
                     s_imuno.innerHTML = 'Chegando ao Limite!!';
