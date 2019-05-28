@@ -96,10 +96,10 @@ function atualizarGrafico(){
             console.log('Conexão ta Funfando');
             response.json().then(function (resposta){ 
                 resposta.reverse();
-                for(i=0; i<resposta.lenght;i++){
+                for(i=0; i<resposta.length;i++){
                     var registro = resposta[i];
                     //ifizinho para nao deixar a temperaturazinha ultrapassar 6 registros
-                    if(t1.data.datasets[0].data.lenght >= 6){
+                    if(t1.data.datasets[0].data.length >= 6){
                         //horas
                         t1.data.label.shift();
                         t1.data.label.push(registro.hora);
@@ -116,7 +116,7 @@ function atualizarGrafico(){
                     //dar update nas tabelas
                     t1.update();
 
-                    if(t2.data.datasets[0].data.lenght >= 6){
+                    if(t2.data.datasets[0].data.length >= 6){
                         t2.data.label.shift();
                         t2.data.label.push(registro.hora);
                         t2.data.datasets[0].data.shift();
