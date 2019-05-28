@@ -150,8 +150,44 @@ router.get('/estatisticas', function (req, res, next) {
 
 });
 
+//TEMPERATURAS UNICAS
+router.get('/tempo-real1', function (req, res, next) {
+  console.log(banco.conexao);
 
-router.get('/tempo-real', function (req, res, next) {
+  var estatisticas = {
+    temperatura: 0,
+    umidade: 0,
+    apelido: ''
+  };
+
+  banco.conectar().then(() => {
+    return banco.sql.query(`
+        select top 1 temp, umid, apelido from dados, geladeira 
+        where idGeladeira = fkGeladeira
+        and fkGeladeira=1 order by idtempumid desc
+        `);
+  }).then(consulta => {
+
+    estatisticas.temperatura = consulta.recordset[0].temp;
+    estatisticas.umidade = consulta.recordset[0].umid;
+    estatisticas.apelido = consulta.recordset[0].apelido;
+    console.log(`Tempo real: ${JSON.stringify(estatisticas)}`);
+
+    res.send(estatisticas);
+
+  }).catch(err => {
+
+    var erro = `Erro na leitura dos registros de tempo real: ${err}`;
+    console.error(erro);
+    res.status(500).send(erro);
+
+  }).finally(() => {
+    banco.sql.close();
+  });
+});
+
+
+router.get('/tempo-real2', function (req, res, next) {
   console.log(banco.conexao);
 
   var estatisticas = {
@@ -161,7 +197,7 @@ router.get('/tempo-real', function (req, res, next) {
 
   banco.conectar().then(() => {
     return banco.sql.query(`
-        select top 1 temp, umid from dados order by idtempumid desc
+        select top 1 temp, umid from dados where fkGeladeira=2 order by idtempumid desc
         `);
   }).then(consulta => {
 
@@ -182,6 +218,36 @@ router.get('/tempo-real', function (req, res, next) {
   });
 });
 
+router.get('/tempo-real3', function (req, res, next) {
+  console.log(banco.conexao);
+
+  var estatisticas = {
+    temperatura: 0,
+    umidade: 0
+  };
+
+  banco.conectar().then(() => {
+    return banco.sql.query(`
+        select top 1 temp, umid from dados where fkGeladeira=3 order by idtempumid desc
+        `);
+  }).then(consulta => {
+
+    estatisticas.temperatura = consulta.recordset[0].temp;
+    estatisticas.umidade = consulta.recordset[0].umid;
+    console.log(`Tempo real: ${JSON.stringify(estatisticas)}`);
+
+    res.send(estatisticas);
+
+  }).catch(err => {
+
+    var erro = `Erro na leitura dos registros de tempo real: ${err}`;
+    console.error(erro);
+    res.status(500).send(erro);
+
+  }).finally(() => {
+    banco.sql.close();
+  });
+});
 
 // não mexa nesta linha!
 module.exports = router;
