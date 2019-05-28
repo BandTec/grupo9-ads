@@ -30,8 +30,7 @@ function atualizarGeladeira1(){
                 t1.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u1.innerHTML = `${resposta.umidade}%`;
                 if(resposta.temperatura < 3,5 || resposta.temperatura >6,5){
-                    imuno.style.class = 'card-header card-header-warning card-header-icon';
-                    s_imuno.innerHTML = `Cuidado! Chegando ao Limite!`;
+                    s_imuno.classList.toggle('card-header card-header-warning card-header-icon');                     s_imuno.innerHTML = `Cuidado! Chegando ao Limite!`;
                     s_imuno.style.color = 'purple';
                 }
 
