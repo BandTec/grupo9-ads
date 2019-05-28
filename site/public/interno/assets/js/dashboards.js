@@ -62,3 +62,7 @@ function atualizarGeladeira3(){
         }
     });
 }
+
+atualizarGeladeira1();
+atualizarGeladeira2();
+atualizarGeladeira3();
