@@ -35,7 +35,7 @@ router.get('/ultimas', function (req, res, next) {
 router.get('/ultimas1', function (req, res, next) {
   console.log(banco.conexao);
   banco.conectar().then(() => {
-    var limite_linhas = 8;
+    var limite_linhas = 1;
     return banco.sql.query(`select top ${limite_linhas} 
                             temp, 
                             umid, 
@@ -61,7 +61,7 @@ router.get('/ultimas1', function (req, res, next) {
 router.get('/ultimas2', function (req, res, next) {
   console.log(banco.conexao);
   banco.conectar().then(() => {
-    var limite_linhas = 8;
+    var limite_linhas = 1;
     return banco.sql.query(`select top ${limite_linhas} 
                             temp, 
                             umid, 
@@ -87,7 +87,7 @@ router.get('/ultimas2', function (req, res, next) {
 router.get('/ultimas3', function (req, res, next) {
   console.log(banco.conexao);
   banco.conectar().then(() => {
-    var limite_linhas = 8;
+    var limite_linhas = 1;
     return banco.sql.query(`select top ${limite_linhas} 
                             temp, 
                             umid, 
