@@ -30,8 +30,9 @@ function atualizarGeladeira1(){
                 t1.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u1.innerHTML = `${resposta.umidade}%`;
                 if(resposta.temperatura < 3,5 || resposta.temperatura >6,5){
-                    s_imuno.classList.toggle('card-header card-header-warning card-header-icon');                     s_imuno.innerHTML = `Cuidado! Chegando ao Limite!`;
+                    imuno.classList.toggle('card-header card-header-warning card-header-icon');                     s_imuno.innerHTML = `Cuidado! Chegando ao Limite!`;
                     s_imuno.style.color = 'purple';
+                    s_imuno.innerHTML = 'Chegando ao Limite!!';
                 }
 
             });
@@ -40,7 +41,6 @@ function atualizarGeladeira1(){
             console.log('Geladeira 1 Não está recebendo dados.');
         }
     });
-    atualizar();
 }
 
 
@@ -59,8 +59,6 @@ function atualizarGeladeira2(){
             console.log('Geladeira 2 Não está recebendo dados.');
         }
     });
-
-    atualizar();
 }
 
 
@@ -79,5 +77,5 @@ function atualizarGeladeira3(){
             console.log('Geladeira 3 Não está recebendo dados.');
         }
     });
-    atualizar();
+
 }
