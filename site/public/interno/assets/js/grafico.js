@@ -91,7 +91,7 @@ var t2 = new Chart(umidade, {
 });
 
 function atualizarGrafico(){
-    fetch('leituras/ultimas1', {cache: 'no-store'}).then(function (response){
+    fetch('../../../../leituras/ultimas1', {cache: 'no-store'}).then(function (response){
         if(response.ok){
             console.log('Conexão ta Funfando');
             response.json().then(function (resposta){ 
