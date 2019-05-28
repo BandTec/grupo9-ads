@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="assets/css/estilo_tempo_real.css">
 </head>
 
-<body onload="atualizarGrafico()">
+<body>
   <div class="wrapper ">
     <!-- AQUI COMEÇA O MENU LATERAL -->
     <div class="sidebar" data-color="" data-background-color="black">
@@ -111,17 +111,18 @@
         
             <div class="content">
               <div class="container-fluid">
-                  <canvas id="graf_comum"></canvas>
-              </div>
-            </div>    
+                  <canvas id="temperatura1"></canvas>
+                  <canvas id="umidade1"></canvas>
+            </div>
+            <!-- </div>    
             <div class="content">
               <div class="container-fluid">
                   <canvas id="graf_vac"></canvas>
               </div>       
               <div class="content">
                 <div class="container-fluid">
-                    <canvas id="graf_imun"></canvas>
-                </div>
+                    <canvas id="graf_imun"></canvas>;
+                </div> -->
     
         </div>
       </div>
@@ -133,11 +134,10 @@
 </body>
 <!-- AQUI COMEÇA OS SCRIPTS TUDO -->
 <!-- SCRIPTS DO GRAFICO -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
 <script src="./assets/js/grafico.js"></script>
-<script src="./assets/js/geladeira1_umid.js"></script>
-<script src="./assets/js/geladeira2_umid.js"></script>
-<script src="./assets/js/geladeira3_umid.js"></script>
+
 
 <script src="./assets/js/core/jquery.min.js"></script>
 <script src="./assets/js/core/popper.min.js"></script>
@@ -170,8 +170,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 <!-- Library for adding dinamically elements -->
 <script src="./assets/js/plugins/arrive.min.js"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Chartist JS -->
 <script src="./assets/js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
@@ -364,23 +362,23 @@
 </script>
 </html>
 <script>
-  function med_comum(){
-    console.log('veio aqui');
-    graf_comum.style.display = 'inline';
-    graf_imun.style.display = 'block';
-    graf_vac.style.display = 'block';
-  }
+  // function med_comum(){
+  //   console.log('veio aqui');
+  //   graf_comum.style.display = 'inline';
+  //   graf_imun.style.display = 'block';
+  //   graf_vac.style.display = 'block';
+  // }
 
-  function imunobiologicos(){
-    graf_imun.style.display = 'inline';
-    graf_vac.style.display = 'block';
-    graf_comum.style.display = 'block';
-  }
+  // function imunobiologicos(){
+  //   graf_imun.style.display = 'inline';
+  //   graf_vac.style.display = 'block';
+  //   graf_comum.style.display = 'block';
+  // }
 
-  function vacinas(){
-    graf_vac.style.display = 'inline';
-    graf_imun.style.display = 'block';
-    graf_comum.style.display = 'block';
-  }
+  // function vacinas(){
+  //   graf_vac.style.display = 'inline';
+  //   graf_imun.style.display = 'block';
+  //   graf_comum.style.display = 'block';
+  // }
 
 </script>

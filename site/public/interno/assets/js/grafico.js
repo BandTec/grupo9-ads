@@ -1,116 +1,151 @@
-    // só mexer se quiser alterar o tempo de atualização
-    // ou se souber o que está fazendo!
-    function atualizarGrafico() {
-        obterDadosGrafico();
-        setTimeout(atualizarGrafico, 10000);
-    }
+var temper = temperatura1.getContext('2d');
+var umidade = umidade1.getContext('2d');
 
-    // altere aqui as configurações do gráfico
-    // (tamanhos, cores, textos, etc)
-    function configurarGrafico() {
-        var configuracoes = {
-            responsive: true,
-            animation: exibiu_grafico ? false : {duration: 1500},
-            hoverMode: 'index',
-            stacked: false,
-            title: {
-                display: true,
-                text: 'Histórico recente de temperatura e umidade'
-            },
-            scales: {
-                yAxes: [{
-                    type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                    display: true,
-                    position: 'left',
-                    id: 'y-temperatura',
-                }, {
-                    type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                    display: true,
-                    position: 'right',
-                    id: 'y-umidade',
 
-                    // grid line settings
-                    gridLines: {
-                        drawOnChartArea: false, // only want the grid lines for one axis to show up
-                    },
-                }],
-            }
-        };
+window.onload = function(){
+    atualizarGrafico();
+};
 
-        exibiu_grafico = true;
+var t1 = new Chart(temper, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: "#af2828",
+            borderColor: "#af2828",
+            borderWidth: 3,
+            pointStyle: 'circle',
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            lineTension: 0.2,
+            fill: false,
+            label: "Temperatura"
+        }]
+    },
+    options: {
+        responsive: true,
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+            display: true,
+            text: 'Gráfico de Temperatura',
+            fontSize: 30,
+            fontColor: "#af2828",
+            fontStyle: "normal"
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
 
-        return configuracoes;
-    }
-
-    // altere aqui como os dados serão exibidos
-    // e como são recuperados do BackEnd
-    function obterDadosGrafico() {
-
-        // neste JSON tem que ser 'labels', 'datasets' etc, 
-        // porque é o padrão do Chart.js
-        var dados = {
-            labels: [],
-            datasets: [
-                {
-                    yAxisID: 'y-temperatura',
-                    label: 'Temperatura',
-                    borderColor: 'red',
-                    backgroundColor: 'red',
-                    fill: false,
-                    data: []
-                },
-                {
-                    yAxisID: 'y-umidade',
-                    label: 'Umidade',
-                    borderColor: 'blue',
-                    backgroundColor: 'blue',
-                    fill: false,
-                    data: []
-                }
-            ]
-        };
-
-        fetch('/leituras/ultimas1', { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                    resposta.reverse();
-
-                    for (i = 0; i < resposta.length; i++) {
-                        var registro = resposta[i];
-                    
-                        // aqui, após 'registro.' use os nomes 
-                        // dos atributos que vem no JSON 
-                        // que gerou na consulta ao banco de dados
-
-                        dados.labels.push(registro.hora);
-
-                        dados.datasets[0].data.push(registro.temp);
-                        dados.datasets[1].data.push(registro.umid);
+                    // Inclui a °C para o gráfico de Temperatura
+                    callback: function(value) {
+                        return value.toFixed(1) + '°C';
                     }
-                    console.log(JSON.stringify(dados));
+                }
+            }]
+        }
+}
+});
 
-                    plotarGrafico(dados);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+var t2 = new Chart(umidade, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: "#0056e2",
+            borderColor: "#0056e2",
+            borderWidth: 3,
+            pointStyle: 'circle',
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            lineTension: 0.2,
+            fill: false,
+            label: "Umidade"
+        }]
+    },
+    options: {
+        responsive: true,
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+            display: true,
+            text: 'Gráfico de Umidade',
+            fontSize: 30,
+            fontColor: "#0056e2",
+            fontStyle: "normal"
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+
+                    // Inclui a °C para o gráfico de Temperatura
+                    callback: function(value) {
+                        return value.toFixed(1) + '%';
+                    }
+                }
+            }]
+        }
+}
+});
+
+function atualizarGrafico(){
+    fetch('leituras/ultimas1', {cache: 'no-store'}).then(function (response){
+        if(response.ok){
+            console.log('Conexão ta Funfando');
+            response.json().then(function (resposta){ 
+                resposta.reverse();
+                for(i=0; i<resposta.lenght;i++){
+                    var registro = resposta[i];
+                    //ifizinho para nao deixar a temperaturazinha ultrapassar 6 registros
+                    if(t1.data.datasets[0].data.lenght >= 6){
+                        //horas
+                        t1.data.label.shift();
+                        t1.data.label.push(registro.hora);
+                        //temperatura e umidade
+                        t1.data.datasets[0].data.shift();
+                        t1.data.datasets[0].data.push(registro.temp);
+                    }
+                    else{
+                        t1.data.label.push(registro.hora);
+                        t1.data.datasets[0].data.push(registro.temp);
+                    }
+
+                    
+                    //dar update nas tabelas
+                    t1.update();
+
+                    if(t2.data.datasets[0].data.lenght >= 6){
+                        t2.data.label.shift();
+                        t2.data.label.push(registro.hora);
+                        t2.data.datasets[0].data.shift();
+                        t2.data.datasets[0].data.push(registro.umid);
+                        
+                    }
+                    else{
+                        t2.data.label.push(registro.hora);
+                        t2.data.datasets[0].data.push(registro.umid);
+                    }
+
+
+                    t2.update();
+                }
             });
+        }
+        else{
+            console.log('Conexão NÃO TA FUNFANDO');
+        }
+        
+       
 
-    }
+    }).catch(function (error){
+        console.error(`O erro é: ${error.message}` );
+    });
 
-    // só altere aqui se souber o que está fazendo!
-    function plotarGrafico(dados) {
-        console.log('iniciando plotagem do gráfico...');
+    setTimeout('atualizarGrafico()',6000);
+}
 
-        var ctx = graf_comum.getContext('2d');
-        window.graf_comum = Chart.Line(ctx, {
-            data: dados,
-            options: configurarGrafico()
-        });
-    }
+
+
+
