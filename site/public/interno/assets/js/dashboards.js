@@ -18,7 +18,7 @@ function atualizarGeladeira1(){
             console.log('Geladeira 1 Recebendo Dados');
             response.json().then(function (resposta){
                 console.log(resposta);
-                t1.innerHTML = `${resposta.temperatura}°C`;
+                t1.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u1.innerHTML = `${resposta.umidade}%`;
 
             });
@@ -35,7 +35,7 @@ function atualizarGeladeira2(){
             console.log('Geladeira 2 Recebendo Dados');
             response.json().then(function (resposta){
                 console.log(resposta);
-                t2.innerHTML = `${resposta.temperatura}°C`;
+                t2.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u2.innerHTML = `${resposta.umidade}%`;
 
             });
@@ -52,7 +52,7 @@ function atualizarGeladeira3(){
             console.log('Geladeira 3 Recebendo Dados');
             response.json().then(function (resposta){
                 console.log(resposta);
-                t3.innerHTML = `${resposta.temperatura}°C`;
+                t3.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u3.innerHTML = `${resposta.umidade}%`;
 
             });
