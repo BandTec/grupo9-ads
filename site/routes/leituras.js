@@ -9,7 +9,6 @@ router.get('/ultimas', function (req, res, next) {
   banco.conectar().then(() => {
     var limite_linhas = 8;
     return banco.sql.query(`select top ${limite_linhas} 
-                            idtempumid
                             temp, 
                             umid, 
                             FORMAT(hora,'HH:mm:ss') as hora,
@@ -31,6 +30,89 @@ router.get('/ultimas', function (req, res, next) {
   });
 
 });
+
+// TESTES DE TRIPLICAÇÃO DOS ENDPOINTS
+router.get('/ultimas1', function (req, res, next) {
+  console.log(banco.conexao);
+  banco.conectar().then(() => {
+    var limite_linhas = 8;
+    return banco.sql.query(`select top ${limite_linhas} 
+                            temp, 
+                            umid, 
+                            FORMAT(hora,'HH:mm:ss') as hora,
+                            fkgeladeira 
+                            from dados where fkgeladeira=1 order by idtempumid desc`);
+  }).then(consulta => {
+
+    console.log(`Resultado da consulta: ${JSON.stringify(consulta.recordset)}`);
+    res.send(consulta.recordset);
+
+  }).catch(err => {
+
+    var erro = `Erro na leitura dos últimos registros: ${err}`;
+    console.error(erro);
+    res.status(500).send(erro);
+
+  }).finally(() => {
+    banco.sql.close();
+  });
+
+});
+router.get('/ultimas2', function (req, res, next) {
+  console.log(banco.conexao);
+  banco.conectar().then(() => {
+    var limite_linhas = 8;
+    return banco.sql.query(`select top ${limite_linhas} 
+                            temp, 
+                            umid, 
+                            FORMAT(hora,'HH:mm:ss') as hora,
+                            fkgeladeira 
+                            from dados where fkgeladeira=2 order by idtempumid desc`);
+  }).then(consulta => {
+
+    console.log(`Resultado da consulta: ${JSON.stringify(consulta.recordset)}`);
+    res.send(consulta.recordset);
+
+  }).catch(err => {
+
+    var erro = `Erro na leitura dos últimos registros: ${err}`;
+    console.error(erro);
+    res.status(500).send(erro);
+
+  }).finally(() => {
+    banco.sql.close();
+  });
+
+});
+router.get('/ultimas3', function (req, res, next) {
+  console.log(banco.conexao);
+  banco.conectar().then(() => {
+    var limite_linhas = 8;
+    return banco.sql.query(`select top ${limite_linhas} 
+                            temp, 
+                            umid, 
+                            FORMAT(hora,'HH:mm:ss') as hora,
+                            fkgeladeira 
+                            from dados where fkgeladeira=3 order by idtempumid desc`);
+  }).then(consulta => {
+
+    console.log(`Resultado da consulta: ${JSON.stringify(consulta.recordset)}`);
+    res.send(consulta.recordset);
+
+  }).catch(err => {
+
+    var erro = `Erro na leitura dos últimos registros: ${err}`;
+    console.error(erro);
+    res.status(500).send(erro);
+
+  }).finally(() => {
+    banco.sql.close();
+  });
+
+});
+
+//FIM DOS TESTES
+
 
 
 router.get('/estatisticas', function (req, res, next) {

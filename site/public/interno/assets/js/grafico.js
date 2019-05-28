@@ -70,7 +70,7 @@
             ]
         };
 
-        fetch('/leituras/ultimas', { cache: 'no-store' }).then(function (response) {
+        fetch('/leituras/ultimas1', { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
 
@@ -108,8 +108,8 @@
     function plotarGrafico(dados) {
         console.log('iniciando plotagem do gráfico...');
 
-        var ctx = canvas_grafico.getContext('2d');
-        window.canvas_grafico = Chart.Line(ctx, {
+        var ctx = graf_comum.getContext('2d');
+        window.graf_comum = Chart.Line(ctx, {
             data: dados,
             options: configurarGrafico()
         });
