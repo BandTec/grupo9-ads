@@ -1,5 +1,3 @@
-import { SSL_OP_NO_TLSv1_2 } from "constants";
-
 window.onload = function(){
     atualizarGeladeira1();
 };
@@ -8,8 +6,7 @@ var t1 = document.getElementById('temp_g1');
 var u1 = document.getElementById('umid_g1');
 var imuno = document.getElementById('div_imuno');
 var s_imuno = document.getElementById('status_imuno');
-
-
+  
 function atualizarGeladeira1(){
     fetch('../leituras/tempo-real1', {cache: 'no-store'}).then(function (response){
         if(response.ok){
