@@ -73,14 +73,14 @@ function atualizarGeladeira2(){
                 console.log(resposta);
                 t2.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u2.innerHTML = `${resposta.umidade}%`;
-                if(resposta.temperatura <= 2 || resposta.temperatura >= 8){
+                if(resposta.temperatura <= 20 || resposta.temperatura >= 25){
                     s_comum.style.color = 'red';
                     t2.style.color = 'red';
                     s_comum.innerHTML = 'Limites de temperatura ultrapassados!';
                     comum.className = "card-header card-header-danger card-header-icon";
                     icone2.innerHTML = "error";
                 }
-                else if(resposta.temperatura <= 3.5 || resposta.temperatura >= 6.5){
+                else if(resposta.temperatura <= 21.25 || resposta.temperatura >= 23.75){
                     s_comum.style.color = 'purple';
                     t2.style.color = 'purple';
                     s_comum.innerHTML = 'Chegando ao Limite!!';
@@ -121,14 +121,14 @@ function atualizarGeladeira3(){
                 console.log(resposta);
                 t3.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u3.innerHTML = `${resposta.umidade}%`;
-                if(resposta.temperatura <= 2 || resposta.temperatura >= 8){
+                if(resposta.temperatura <= -20 || resposta.temperatura >= 0){
                     s_comum.style.color = 'red';
                     t2.style.color = 'red';
                     s_comum.innerHTML = 'Limites de temperatura ultrapassados!';
                     comum.className = "card-header card-header-danger card-header-icon";
                     icone2.innerHTML = "error";
                 }
-                else if(resposta.temperatura <= 3.5 || resposta.temperatura >= 6.5){
+                else if(resposta.temperatura <= -15 || resposta.temperatura >= -5){
                     s_comum.style.color = 'purple';
                     t2.style.color = 'purple';
                     s_comum.innerHTML = 'Chegando ao Limite!!';
