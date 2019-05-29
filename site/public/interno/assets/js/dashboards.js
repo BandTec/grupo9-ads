@@ -10,6 +10,7 @@ var t1 = document.getElementById('temp_g1');
 var u1 = document.getElementById('umid_g1');
 var imuno = document.getElementById('div_imuno');
 var s_imuno = document.getElementById('status_imuno');
+var icone1 = document.getElementById('icone_g1');
   
 function atualizarGeladeira1(){
     console.log('Entrou aqui');
@@ -23,7 +24,17 @@ function atualizarGeladeira1(){
                 if(resposta.temperatura < 3.5 || resposta.temperatura > 6.5){
                     // imuno.classList.toggle('card-header card-header-warning card-header-icon');                     s_imuno.innerHTML = `Cuidado! Chegando ao Limite!`;
                     s_imuno.style.color = 'purple';
+                    t1.style.color = 'purple';
                     s_imuno.innerHTML = 'Chegando ao Limite!!';
+                    imuno.className = "card-header card-header-warning card-header-icon";
+                    icone1.innerHTML = "warning";
+                }
+                if(resposta.temperatura <= 2 || resposta.temperatura >= 8){
+                    s_imuno.style.color = 'red';
+                    t1.style.color = 'red';
+                    s_imuno.innerHTML = 'Temperatura ultrapassada!';
+                    imuno.className = "card-header card-header-danger card-header-icon";
+                    icone1.innerHTML = "error";
                 }
 
             });

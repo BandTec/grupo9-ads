@@ -168,11 +168,11 @@ router.get('/tempo-real-teste', function (req, res, next) {
 
   banco.conectar().then(() => {
     return banco.sql.query(`
-        select top 1 temp as temp1, umid as umid1, from geladeira 
+        select top 1 temp as temp1, umid as umid1 from geladeira 
         where fkGeladeira=1 order by idtempumid desc;
-        select top 1 temp as temp2, umid as umid2, from geladeira
+        select top 1 temp as temp2, umid as umid2 from geladeira
         where fkGeladeira=2 order by idtempumid desc;
-        select top 1 temp as temp3, umid as umid3, from geladeira
+        select top 1 temp as temp3, umid as umid3 from geladeira
         where fkGeladeira=3 order by idtempumid desc;
         `);
   }).then(consulta => {
