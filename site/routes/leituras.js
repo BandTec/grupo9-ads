@@ -150,6 +150,59 @@ router.get('/estatisticas', function (req, res, next) {
 
 });
 
+
+
+
+//TESTE DE ENDPOINT TRIPLO
+router.get('/tempo-real-teste', function (req, res, next) {
+  console.log(banco.conexao);
+
+  var estatisticas = {
+    temperatura1: 0,
+    umidade1: 0,
+    temperatura2: 0,
+    umidade2: 0,
+    temperatura3: 0,
+    umidade3: 0
+  };
+
+  banco.conectar().then(() => {
+    return banco.sql.query(`
+        select top 1 temp as temp1, umid as umid1, from geladeira 
+        where fkGeladeira=1 order by idtempumid desc;
+        select top 1 temp as temp2, umid as umid2, from geladeira
+        where fkGeladeira=2 order by idtempumid desc;
+        select top 1 temp as temp3, umid as umid3, from geladeira
+        where fkGeladeira=3 order by idtempumid desc;
+        `);
+  }).then(consulta => {
+
+    estatisticas.temperatura1 = consulta.recordset[0].temp1;
+    estatisticas.umidade1 = consulta.recordset[0].umid1;
+    estatisticas.temperatura2 = consulta.recordset[0].temp2;
+    estatisticas.umidade2 = consulta.recordset[0].umid2;
+    estatisticas.temperatura3 = consulta.recordset[0].temp3;
+    estatisticas.umidade3 = consulta.recordset[0].umid3;
+    
+    console.log(`Tempo real: ${JSON.stringify(estatisticas)}`);
+
+    res.send(estatisticas);
+
+  }).catch(err => {
+
+    var erro = `Erro na leitura dos registros de tempo real: ${err}`;
+    console.error(erro);
+    res.status(500).send(erro);
+
+  }).finally(() => {
+    banco.sql.close();
+  });
+});
+
+
+
+
+
 //TEMPERATURAS UNICAS
 router.get('/tempo-real1', function (req, res, next) {
   console.log(banco.conexao);

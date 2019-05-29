@@ -1,13 +1,18 @@
 window.onload = function(){
     atualizarGeladeira1();
+    atualizarGeladeira2();
+    atualizarGeladeira3();
 };
 
+
+// TIPO 1
 var t1 = document.getElementById('temp_g1');
 var u1 = document.getElementById('umid_g1');
 var imuno = document.getElementById('div_imuno');
 var s_imuno = document.getElementById('status_imuno');
   
 function atualizarGeladeira1(){
+    console.log('Entrou aqui');
     fetch('../leituras/tempo-real1', {cache: 'no-store'}).then(function (response){
         if(response.ok){
             console.log('Geladeira 1 Recebendo Dados');
@@ -16,7 +21,7 @@ function atualizarGeladeira1(){
                 t1.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u1.innerHTML = `${resposta.umidade}%`;
                 if(resposta.temperatura < 3.5 || resposta.temperatura > 6.5){
-                    imuno.classList.toggle('card-header card-header-warning card-header-icon');                     s_imuno.innerHTML = `Cuidado! Chegando ao Limite!`;
+                    // imuno.classList.toggle('card-header card-header-warning card-header-icon');                     s_imuno.innerHTML = `Cuidado! Chegando ao Limite!`;
                     s_imuno.style.color = 'purple';
                     s_imuno.innerHTML = 'Chegando ao Limite!!';
                 }
@@ -34,5 +39,51 @@ function atualizarGeladeira1(){
 }
 
 
+// Tipo 2
+var t2 = document.getElementById('temp_g2');
+var u2 = document.getElementById('umid_g2');
+
+
+function atualizarGeladeira2(){
+    fetch('../leituras/tempo-real2', {cache: 'no-store'}).then(function (response){
+        if(response.ok){
+            console.log('Geladeira 2 Recebendo Dados');
+            response.json().then(function (resposta){
+                console.log(resposta);
+                t2.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
+                u2.innerHTML = `${resposta.umidade}%`;
+
+            });
+        }
+        else{
+            console.log('Geladeira 2 Não está recebendo dados.');
+        }
+    });
+
+    setTimeout('atualizarGeladeira2()', 8000);
+}
+
+//TIPO 3
+var t3 = document.getElementById('temp_g3');
+var u3 = document.getElementById('umid_g3');
+
+function atualizarGeladeira3(){
+    console.log('Entrou aqui');
+    fetch('../leituras/tempo-real3', {cache: 'no-store'}).then(function (response){
+        if(response.ok){
+            console.log('Geladeira 3 Recebendo Dados');
+            response.json().then(function (resposta){
+                console.log(resposta);
+                t3.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
+                u3.innerHTML = `${resposta.umidade}%`;
+
+            });
+        }
+        else{
+            console.log('Geladeira 3 Não está recebendo dados.');
+        }
+    });
+    setTimeout('atualizarGeladeira3()', 8000);
+}
 
 
