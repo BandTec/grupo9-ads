@@ -91,7 +91,7 @@ function atualizarGeladeira2(){
                     s_comum.style.color = 'gray';
                     t2.style.color = 'black';
                     s_comum.innerHTML = 'dentro do limite';
-                    imuno.className = "card-header card-header-success card-header-icon";
+                    comum.className = "card-header card-header-success card-header-icon";
                     icone2.innerHTML = "ac_unit";
                 }
 
