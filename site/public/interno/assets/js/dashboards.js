@@ -122,25 +122,25 @@ function atualizarGeladeira3(){
                 t3.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
                 u3.innerHTML = `${resposta.umidade}%`;
                 if(resposta.temperatura <= -20 || resposta.temperatura >= 0){
-                    s_comum.style.color = 'red';
-                    t2.style.color = 'red';
-                    s_comum.innerHTML = 'Limites de temperatura ultrapassados!';
-                    comum.className = "card-header card-header-danger card-header-icon";
-                    icone2.innerHTML = "error";
+                    s_insul.style.color = 'red';
+                    t3.style.color = 'red';
+                    s_insul.innerHTML = 'Limites de temperatura ultrapassados!';
+                    insulina.className = "card-header card-header-danger card-header-icon";
+                    icone3.innerHTML = "error";
                 }
                  if(resposta.temperatura <= -15 || resposta.temperatura >= -5){
-                    s_comum.style.color = 'purple';
-                    t2.style.color = 'purple';
-                    s_comum.innerHTML = 'Chegando ao Limite!!';
-                    comum.className = "card-header card-header-warning card-header-icon";
-                    icone2.innerHTML = "warning";
+                    s_insul.style.color = 'purple';
+                    t3.style.color = 'purple';
+                    s_insul.innerHTML = 'Chegando ao Limite!!';
+                    insulina.className = "card-header card-header-warning card-header-icon";
+                    icone3.innerHTML = "warning";
                 }
                 if(resposta.temperatura >-15 && resposta.temperatura< -5){
-                    s_comum.style.color = 'gray';
-                    t2.style.color = 'black';
-                    s_comum.innerHTML = 'dentro do limite';
-                    imuno.className = "card-header card-header-success card-header-icon";
-                    icone2.innerHTML = "ac_unit";
+                    s_insul.style.color = 'gray';
+                    t3.style.color = 'black';
+                    s_insul.innerHTML = 'dentro do limite';
+                    insulina.className = "card-header card-header-success card-header-icon";
+                    icone3.innerHTML = "ac_unit";
                 }
 
             });
