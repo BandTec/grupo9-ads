@@ -1,0 +1,14 @@
+{
+	"database": {
+		"server": "servidor01191050.database.windows.net",
+		"user": "GF01191050",
+		"password": "#Gf47652050880",
+		"database": "Banco_Projeto",
+		"options": {
+			"encrypt": true
+		}
+	},
+	"security":{
+		"key": "CHAVE_SEGURANCA"
+	}
+}
