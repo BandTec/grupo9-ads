@@ -4114,11 +4114,11 @@ tbody.collapse.show {
 
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
-  background-color: #6e6d6d;
+  background-color: #6e6d6dce;
 }
 
 .nav-tabs .nav-link.disabled {
-  color: #6c757d;
+  color: #16161698;
   background-color: transparent;
   border-color: transparent;
 }
