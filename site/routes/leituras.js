@@ -154,7 +154,7 @@ router.get('/estatisticas', function (req, res, next) {
 
 
 //TESTE DE ENDPOINT TRIPLO
-router.get('/tempo-real-teste', function (req, res, next) {
+router.get('/tempo-real', function (req, res, next) {
   console.log(banco.conexao);
 
   var estatisticas = {
@@ -168,7 +168,7 @@ router.get('/tempo-real-teste', function (req, res, next) {
 
   banco.conectar().then(() => {
     return banco.sql.query(`
-        select top 1 d1.temp as 'temp1', d1.umid as 'umid1', d2.temp as 'temp2', d2.umid as 'umid2', d3.temp as 'temp3', d3.umid as 'umid3'
+        select top 1 d1.temp as temp1, d1.umid as umid1, d2.temp as temp2, d2.umid as umid2, d3.temp as temp3, d3.umid as umid3
         from dados as d1, dados as d2, dados as d3
         where d1.fkGeladeira=1
         and d2.fkGeladeira = 2
@@ -203,104 +203,3 @@ router.get('/tempo-real-teste', function (req, res, next) {
 
 
 
-//TEMPERATURAS UNICAS
-router.get('/tempo-real1', function (req, res, next) {
-  console.log(banco.conexao);
-
-  var estatisticas = {
-    temperatura: 0,
-    umidade: 0,
-    apelido: ''
-  };
-
-  banco.conectar().then(() => {
-    return banco.sql.query(`
-        select top 1 temp, umid, apelido from dados, geladeira 
-        where idGeladeira = fkGeladeira
-        and fkGeladeira=1 order by idtempumid desc
-        `);
-  }).then(consulta => {
-
-    estatisticas.temperatura = consulta.recordset[0].temp;
-    estatisticas.umidade = consulta.recordset[0].umid;
-    estatisticas.apelido = consulta.recordset[0].apelido;
-    console.log(`Tempo real: ${JSON.stringify(estatisticas)}`);
-
-    res.send(estatisticas);
-
-  }).catch(err => {
-
-    var erro = `Erro na leitura dos registros de tempo real: ${err}`;
-    console.error(erro);
-    res.status(500).send(erro);
-
-  }).finally(() => {
-    banco.sql.close();
-  });
-});
-
-
-router.get('/tempo-real2', function (req, res, next) {
-  console.log(banco.conexao);
-
-  var estatisticas = {
-    temperatura: 0,
-    umidade: 0
-  };
-
-  banco.conectar().then(() => {
-    return banco.sql.query(`
-        select top 1 temp, umid from dados where fkGeladeira=2 order by idtempumid desc
-        `);
-  }).then(consulta => {
-
-    estatisticas.temperatura = consulta.recordset[0].temp;
-    estatisticas.umidade = consulta.recordset[0].umid;
-    console.log(`Tempo real: ${JSON.stringify(estatisticas)}`);
-
-    res.send(estatisticas);
-
-  }).catch(err => {
-
-    var erro = `Erro na leitura dos registros de tempo real: ${err}`;
-    console.error(erro);
-    res.status(500).send(erro);
-
-  }).finally(() => {
-    banco.sql.close();
-  });
-});
-
-router.get('/tempo-real3', function (req, res, next) {
-  console.log(banco.conexao);
-
-  var estatisticas = {
-    temperatura: 0,
-    umidade: 0
-  };
-
-  banco.conectar().then(() => {
-    return banco.sql.query(`
-        select top 1 temp, umid from dados where fkGeladeira=3 order by idtempumid desc
-        `);
-  }).then(consulta => {
-
-    estatisticas.temperatura = consulta.recordset[0].temp;
-    estatisticas.umidade = consulta.recordset[0].umid;
-    console.log(`Tempo real: ${JSON.stringify(estatisticas)}`);
-
-    res.send(estatisticas);
-
-  }).catch(err => {
-
-    var erro = `Erro na leitura dos registros de tempo real: ${err}`;
-    console.error(erro);
-    res.status(500).send(erro);
-
-  }).finally(() => {
-    banco.sql.close();
-  });
-});
-
-// não mexa nesta linha!
-module.exports = router;
