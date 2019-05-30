@@ -28,14 +28,14 @@ function atualizarGeladeira1(){
                     imuno.className = "card-header card-header-danger card-header-icon";
                     icone1.innerHTML = "error";
                 }
-                else if(resposta.temperatura <= 3.5 || resposta.temperatura >= 6.5){
+                 if(resposta.temperatura <= 3.5 || resposta.temperatura >= 6.5){
                     s_imuno.style.color = 'purple';
                     t1.style.color = 'purple';
                     s_imuno.innerHTML = 'Chegando ao Limite!!';
                     imuno.className = "card-header card-header-warning card-header-icon";
                     icone1.innerHTML = "warning";
                 }
-                else{
+                if(resposta.temperatura >3.5 && resposta.temperatura<6.5){
                     s_imuno.style.color = 'gray';
                     t1.style.color = 'black';
                     s_imuno.innerHTML = 'dentro do limite';
@@ -80,14 +80,14 @@ function atualizarGeladeira2(){
                     comum.className = "card-header card-header-danger card-header-icon";
                     icone2.innerHTML = "error";
                 }
-                else if(resposta.temperatura < 21.25 || resposta.temperatura > 23.75){
+                 if(resposta.temperatura <= 21.25 || resposta.temperatura >= 23.75){
                     s_comum.style.color = 'purple';
                     t2.style.color = 'purple';
                     s_comum.innerHTML = 'Chegando ao Limite!!';
                     comum.className = "card-header card-header-warning card-header-icon";
                     icone2.innerHTML = "warning";
                 }
-                else{
+                if(resposta.temperatura >21.25 && resposta.temperatura<23.75){
                     s_comum.style.color = 'gray';
                     t2.style.color = 'black';
                     s_comum.innerHTML = 'dentro do limite';
@@ -128,14 +128,14 @@ function atualizarGeladeira3(){
                     comum.className = "card-header card-header-danger card-header-icon";
                     icone2.innerHTML = "error";
                 }
-                else if(resposta.temperatura <= -15 || resposta.temperatura >= -5){
+                 if(resposta.temperatura <= -15 || resposta.temperatura >= -5){
                     s_comum.style.color = 'purple';
                     t2.style.color = 'purple';
                     s_comum.innerHTML = 'Chegando ao Limite!!';
                     comum.className = "card-header card-header-warning card-header-icon";
                     icone2.innerHTML = "warning";
                 }
-                else{
+                if(resposta.temperatura >-15 && resposta.temperatura< -5){
                     s_comum.style.color = 'gray';
                     t2.style.color = 'black';
                     s_comum.innerHTML = 'dentro do limite';
