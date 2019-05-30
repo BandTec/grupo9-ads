@@ -7,7 +7,9 @@
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "body-parser": "^1.18.3",
     "debug": "~2.6.9",
+    "nodemailer": "^4.6.8",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
     "mssql": "~5.1.0"

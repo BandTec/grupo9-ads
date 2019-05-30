@@ -19,9 +19,6 @@
 </head>
 
 <body>
-
-
-  <!--- LINK CASO FOR LINKAR COM A PAG DO FALE CONOSCO https://grupopharmasensors.zendesk.com/hc/pt-br/-->
   <div class="wrapper ">
     <!-- AQUI COMEÇA O MENU LATERAL -->
     <div class="sidebar" data-color="" data-background-color="black">
@@ -113,18 +110,18 @@
                       <p class="card-category">Entre em contato conosco!</p>
                     </div>
                   <div class="card-body">
-                    <form>
+                    <form role="form" action="/send-email" method="post">
                         <div class="col-md-12">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Nome</label>
-                              <input type="email" class="form-control">
+                              <label class="bmd-label-floating">email</label>
+                              <input type="text" class="form-control" id="from" name="from" required>
                             </div>
                           </div>
 
                           <div class="col-md-12">
                               <div class="form-group">
-                                <label class="bmd-label-floating">Email</label>
-                                <input type="email" class="form-control">
+                                <label class="bmd-label-floating">assunto</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
                               </div>
                             </div>
 
@@ -132,7 +129,7 @@
                                 <div class="col-md-12">
                                   <div class="form-group">
                                       <label class="bmd-label-floating">Digite sua mensagem </label>
-                                      <textarea class="form-control" rows="5"></textarea>
+                                      <textarea class="form-control" type="textarea" id="message" name="message"  maxlength="140" rows="7" required></textarea>
                                     </div>
                                   </div>
                                 </div>
