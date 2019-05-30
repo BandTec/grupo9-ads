@@ -53,7 +53,7 @@ function atualizarGeladeira1(){
         console.error(`O erro é: ${error.message}` );
     });
  
-    setTimeout('atualizarGeladeira1()', 8000);
+    setTimeout('atualizarGeladeira1()', 10000);
 }
 
 
@@ -102,7 +102,7 @@ function atualizarGeladeira2(){
         }
     });
 
-    setTimeout('atualizarGeladeira2()', 8000);
+    setTimeout('atualizarGeladeira2()', 10000);
 }
 
 //TIPO 3
@@ -149,7 +149,7 @@ function atualizarGeladeira3(){
             console.log('Geladeira 3 Não está recebendo dados.');
         }
     });
-    setTimeout('atualizarGeladeira3()', 8000);
+    setTimeout('atualizarGeladeira3()', 10000);
 }
 
 
