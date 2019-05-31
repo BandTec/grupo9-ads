@@ -94,7 +94,7 @@ function registrar_leitura(temperatura, umidade) {
                                 INSERT into dados ( temp, umid, hora, fkGeladeira)
                                 values ( ${temperatura - 22}, ${umidade}, CURRENT_TIMESTAMP,  1);
                                 INSERT into dados ( temp, umid, hora, fkGeladeira)
-                                values ( ${(temperatura * 4)/120}, ${umidade}, CURRENT_TIMESTAMP,  3);`);
+                                values ( ${(temperatura * 4)-120}, ${umidade}, CURRENT_TIMESTAMP,  3);`);
 
     }).catch(err => {
 
