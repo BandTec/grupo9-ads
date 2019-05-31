@@ -4,10 +4,10 @@ use farmacia;
 create table medicamentos(
     idMedicamento   int primary key,
     tipo            varchar(30),
-    tempMax         char(4),    
-    tempMin         char(4),
-    umidMax         char(4),
-    umidMin         char(4)
+    tempMax         int,    
+    tempMin         int,
+    umidMax         int,
+    umidMin         int
 );
 
 insert into medicamentos values 
@@ -50,8 +50,8 @@ select * from geladeira;
 
 create table dados(
     idTempUmid  int,
-    temp        varchar(4),
-    umid        varchar(4),
+    temp        float,
+    umid        int,
     dat_        date,
     hora        time,
     fkGeladeira int,
