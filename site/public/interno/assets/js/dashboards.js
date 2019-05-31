@@ -26,28 +26,28 @@ var icone3 = document.getElementById('icone_g3');
 
 function atualizarGeladeiras(){
     console.log('Entrou aqui');
-    fetch('../leituras/tempo-real', {cache: 'no-store'}).then(function (response){
+    fetch('../leituras/tempo-real-teste', {cache: 'no-store'}).then(function (response){
         if(response.ok){
             console.log('Geladeira 1 Recebendo Dados');
             response.json().then(function (resposta){
                 console.log(resposta);
-                t1.innerHTML = `${(resposta.temperatura).toFixed(1)}°C`;
-                u1.innerHTML = `${resposta.umidade}%`;
-                if(resposta.temperatura <= 2 || resposta.temperatura >= 8){
+                t1.innerHTML = `${(resposta.temperatura1).toFixed(1)}°C`;
+                u1.innerHTML = `${resposta.umidade1}%`;
+                if(resposta.temperatura1 <= 2 || resposta.temperatura1 >= 8){
                     s_imuno.style.color = 'red';
                     t1.style.color = 'red';
                     s_imuno.innerHTML = 'Limites de temperatura ultrapassados!';
                     imuno.className = "card-header card-header-danger card-header-icon";
                     icone1.innerHTML = "error";
                 }
-                 if(resposta.temperatura <= 3.5 || resposta.temperatura >= 6.5){
+                 if(resposta.temperatura1 <= 3.5 || resposta.temperatura1 >= 6.5){
                     s_imuno.style.color = 'purple';
                     t1.style.color = 'purple';
                     s_imuno.innerHTML = 'Chegando ao Limite!!';
                     imuno.className = "card-header card-header-warning card-header-icon";
                     icone1.innerHTML = "warning";
                 }
-                if(resposta.temperatura >3.5 && resposta.temperatura<6.5){
+                if(resposta.temperatura1 >3.5 && resposta.temperatura1<6.5){
                     s_imuno.style.color = 'gray';
                     t1.style.color = 'black';
                     s_imuno.innerHTML = 'dentro do limite';
