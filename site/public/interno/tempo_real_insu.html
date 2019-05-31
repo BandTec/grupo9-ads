@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/estilo_tempo_real.css">
 </head>
 
-<body>
+<body onload="verificarAutenticacao()">
   <div class="wrapper ">
     <!-- AQUI COMEÇA O MENU LATERAL -->
     <div class="sidebar" data-color="" data-background-color="black">
@@ -344,9 +344,16 @@
   });
 </script>
 <script>
+
  function logoff() {
   sessionStorage.removeItem('usuario_bandtec');
   verificarAutenticacao();
 }
+function verificarAutenticacao() {
+        if (sessionStorage.usuario_bandtec != undefined) {
+            window.location.href = './interno/index.html';
+        }
+    }
+
 </script>
 </html>

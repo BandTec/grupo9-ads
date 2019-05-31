@@ -17,7 +17,7 @@
   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
 </head>
 
-<body>
+<body onload="verificarAutenticacao()">
   
   <div class="wrapper ">
     <!-- AQUI COMEÇA O MENU LATERAL -->
@@ -411,9 +411,14 @@
   });
 </script>
 <script>
- function logoff() {
-        sessionStorage.removeItem('usuario_bandtec');
-        verificarAutenticacao();
-    }
-</script>
+  function logoff() {
+   sessionStorage.removeItem('usuario_bandtec');
+   verificarAutenticacao();
+ }
+ function verificarAutenticacao() {
+         if (sessionStorage.usuario_bandtec != undefined) {
+             window.location.href = './interno/index.html';
+         }
+     }
+ </script>
 </html>

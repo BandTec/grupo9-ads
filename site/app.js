@@ -12,7 +12,7 @@ var leiturasRouter = require('./routes/leituras');
 //var usersRouter = require('./routes/users');
 var app = express();
 
-app.use(express.static('public/interno'));
+// app.use(express.static('public/interno'));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

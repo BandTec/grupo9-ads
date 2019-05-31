@@ -49,8 +49,8 @@
 
                 <div class="card-body">
                     <h2 class="title">ENTRAR</h2>
-                    <form id="form_login" method="post" onsubmit="return entrar()"></form>
-                        <div class="input-group">
+                    <form id="form_login" method="post" onsubmit="return entrar()">
+                            <div class="input-group">
                                 <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="login"
                                 id="email" required data-error="Por favor informe seu nome">
                         </div>
@@ -59,9 +59,11 @@
                                 <input class="input--style-3" type="password" placeholder="Senha" name="senha"
                                 required data-error="Por favor informe a senha">
                         </div>
-                       <input type="checkbox" class="checkbox"> Lembrar-se de mim <br>
+                    <input type="checkbox" class="checkbox"> Lembrar-se de mim <br>
                         <div class="p-t-10">
                                 <button id="btn_entrar" class="btn btn--pill btn--green">Entrar</button>
+                    </form>
+
                         </div> <br>
                             
                         <!-- <p class="cor"></p>

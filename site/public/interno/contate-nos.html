@@ -375,9 +375,14 @@ function mensagem1(){
 }
 </script>
 <script>
- function logoff() {
-        sessionStorage.removeItem('usuario_bandtec');
-        verificarAutenticacao();
-    }
-</script>
+  function logoff() {
+   sessionStorage.removeItem('usuario_bandtec');
+   verificarAutenticacao();
+ }
+ function verificarAutenticacao() {
+         if (sessionStorage.usuario_bandtec == undefined) {
+             window.location.href = '../index.html';
+         }
+     }
+ </script>
 </html>
