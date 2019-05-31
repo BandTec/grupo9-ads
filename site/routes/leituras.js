@@ -173,7 +173,7 @@ router.get('/tempo-real-teste', function (req, res, next) {
         where d1.fkGeladeira=1
         and d2.fkGeladeira = 2
         and d3.fkGeladeira = 3   
-        order by d1.idtempumid desc
+        order by d1.idtempumid desc, d2.idtempumid desc, d3.idtempumid desc
         `);
   }).then(consulta => {
 

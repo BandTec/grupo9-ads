@@ -40,14 +40,14 @@ function atualizarGeladeiras(){
                     imuno.className = "card-header card-header-danger card-header-icon";
                     icone1.innerHTML = "error";
                 }
-                 if(resposta.temperatura1 <= 3.5 || resposta.temperatura1 >= 6.5){
+                 else if(resposta.temperatura1 <= 3.5 || resposta.temperatura1 >= 6.5){
                     s_imuno.style.color = 'purple';
                     t1.style.color = 'purple';
                     s_imuno.innerHTML = 'Chegando ao Limite!!';
                     imuno.className = "card-header card-header-warning card-header-icon";
                     icone1.innerHTML = "warning";
                 }
-                if(resposta.temperatura1 >3.5 && resposta.temperatura1<6.5){
+                else if(resposta.temperatura1 >3.5 && resposta.temperatura1<6.5){
                     s_imuno.style.color = 'gray';
                     t1.style.color = 'black';
                     s_imuno.innerHTML = 'dentro do limite';
