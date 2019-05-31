@@ -31,9 +31,6 @@
     <!-- Title Page-->
     <title>Login | PharmaSensors</title>
 
-    
-    <!-- AJAX -- biblioteca usada para enviar formulario ou coisas do frontend pro backend - PEGUEI NO W3SCHOOLS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
     <!-- Font special for pages-->
     <link
@@ -52,19 +49,19 @@
 
                 <div class="card-body">
                     <h2 class="title">ENTRAR</h2>
-                    <form id="formLogin">
+                    <form id="form_login" method="post" onsubmit="return entrar()"></form>
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="email"
-                                id="email" required data-error="Por favor informe seu email de acesso">
+                                <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="login"
+                                id="email" required data-error="Por favor informe seu nome">
                         </div>
 
                         <div class="input-group">
-                            <input class="input--style-3" type="password" placeholder="Senha" name="senha" id="senha"
+                                <input class="input--style-3" type="password" placeholder="Senha" name="senha"
                                 required data-error="Por favor informe a senha">
                         </div>
                        <input type="checkbox" class="checkbox"> Lembrar-se de mim <br>
                         <div class="p-t-10">
-                            <button id="botao" type="button" class="btn btn--pill btn--green"onclick="validarLogin()">Entrar</button>
+                                <button id="btn_entrar" class="btn btn--pill btn--green">Entrar</button>
                         </div> <br>
                             
                         <!-- <p class="cor"></p>
@@ -91,26 +88,70 @@
 </body>
 
 </html>
+<!--Inicio da validação do login-->
 
 <script>
-    //Função pra enviar verificar o login
-    function validarLogin() {
-            var dados = $('#formLogin').serialize();
-            console.log(dados);
-    
-            $.ajax({
-                url: "../login",
-                type: 'post',
-                data: dados
-    
-            }).done(function (resposta) {
-                if (resposta == "ok") {
-                    window.location = "interno/index.html"; //mudar no site do projeto para tela de inicio do site interno
-            }else{
-                alert("Usuário ou senha incorrtos!");
-            }
-            });
-    
+     verificarAutenticacao();
+    function verificarAutenticacao() {
+        if (sessionStorage.usuario_bandtec != undefined) {
+            window.location.href = './interno/index.html';
         }
+    }
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/entrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    sessionStorage.usuario_bandtec = resposta.nome;
+                    verificarAutenticacao();
+                });
+            } else {
+                console.log('Erro de login!');
+                finalizar_aguardar();
+            }
+            
+            });
+            return false;
+    }
+// function verificarAutenticacao() {
+//     if (sessionStorage.usuario_bandtec != undefined) {
+//         window.location.href = './interno/index.html';
+//     }
+// }
+// function entrar() {
+//     aguardar();
+//     var formulario = new URLSearchParams(new FormData(form_login));
+//     fetch("/usuarios/entrar", {
+//         method: "POST",
+//         body: formulario
+//     }).then(function (response) {
+        
+//         if (response.ok) {
+//             response.json().then(function (resposta) {
+//                 sessionStorage.usuario_bandtec = resposta.nome;
+//                 verificarAutenticacao();
+//             });
+//         } else {
+//             console.log('Erro de login!');
+//             finalizar_aguardar();
+//         }
+//     });
+//     return false;
+// }
+function aguardar() {
+    btn_entrar.disabled = true;
+}
+    
+function finalizar_aguardar() {
+    btn_entrar.disabled = false;
+   
+}
+    
+        
     
 </script>
