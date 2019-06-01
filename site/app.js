@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var usuariosRouter = require('./routes/usuarios');
 var leiturasRouter = require('./routes/leituras');
-//var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users');
 var app = express();
 
 
@@ -29,6 +29,7 @@ app.use('/', indexRouter);
 
 app.use('/usuarios', usuariosRouter);
 app.use('/leituras', leiturasRouter);
+app.use('/users', usersRouter);
 
 app.post('/send-email', function (req, res) {
     let transporter = nodeMailer.createTransport({

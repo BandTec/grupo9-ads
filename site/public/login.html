@@ -39,6 +39,10 @@
 
     <!-- Main CSS-->
     <link href="css/main_login.css" rel="stylesheet" media="all">
+
+    <!-- biblioteca Swall - alerts-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body>
@@ -100,7 +104,14 @@
         }
     }
     function entrar() {
-        aguardar();
+       //alert exibido quando o usuário entra.
+        swal({
+            title: "Entrando...",
+            text: "Aguarde alguns instantes",
+            buttons: false,
+            closeOnClickOutside: false,
+        });
+        // aguardar();
         var formulario = new URLSearchParams(new FormData(form_login));
         fetch("/usuarios/entrar", {
             method: "POST",
@@ -145,9 +156,9 @@
 //     });
 //     return false;
 // }
-function aguardar() {
-    btn_entrar.disabled = true;
-}
+// function aguardar() {
+//     btn_entrar.disabled = true;
+// }
     
 function finalizar_aguardar() {
     btn_entrar.disabled = false;
