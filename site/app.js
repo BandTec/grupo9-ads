@@ -39,7 +39,7 @@ app.post('/send-email', function (req, res) {
         auth: {
             // should be replaced with real sender's account
             user: 'oscar.casavelha@gmail.com',
-            pass: 'Flicts1700'
+            pass: 'StephenHawking11'
         }
     });
     let mailOptions = {
