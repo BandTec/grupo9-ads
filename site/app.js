@@ -55,7 +55,7 @@ app.post('/send-email', function (req, res) {
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
-    res.writeHead(301, { Location: '/contate-nos.html' });
+    res.writeHead(301, { Location: 'interno/contate-nos.html' });
     res.end();
   });
   let server = app.listen(8081, function(){
