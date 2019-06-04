@@ -114,14 +114,14 @@
                         <div class="col-md-12">
                             <div class="form-group">
                               <label class="bmd-label-floating">email</label>
-                              <input type="text" class="form-control" id="from" name="from" required>
+                              <input type="text" class="form-control" id="from" name="from"  required>
                             </div>
                           </div>
 
                           <div class="col-md-12">
                               <div class="form-group">
                                 <label class="bmd-label-floating">assunto</label>
-                                <input type="text" class="form-control" id="subject" name="subject" required>
+                                <input type="text" class="form-control" id="subject" name="subject"  required>
                               </div>
                             </div>
 
@@ -371,7 +371,30 @@
 </script>
 <script>
 function mensagem1(){
-  alert("Sua mensagem foi enviada com sucesso!");
+
+
+
+  if(from.value == '' || subject.value == '' ||  message.value == '') {
+    swal({
+            title: "Erro!",
+            text: "Por favor, preencha todos os campos do formulario!",
+            type: "warning",
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "OK",
+            closeOnConfirm: true
+           
+        }
+      );
+    
+  } else {
+    swal({
+            title: "Pronto!",
+            text: "Sua mensagem foi enviada com sucesso!",
+            buttons: false,
+            closeOnClickOutside: false,
+        });
+  }
+  
 }
 </script>
 <script>
