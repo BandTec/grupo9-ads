@@ -2,6 +2,9 @@
 <html lang="pt">
 
 <head>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
+
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,8 +36,7 @@
 
 
     <!-- Font special for pages-->
-    <link
-        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Main CSS-->
@@ -54,39 +56,39 @@
                 <div class="card-body">
                     <h2 class="title">ENTRAR</h2>
                     <form id="form_login" method="post" onsubmit="return entrar()">
-                            <div class="input-group">
-                                <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="login"
-                                id="email" required data-error="Por favor informe seu nome">
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="E-mail de acesso" name="login" id="email"
+                                required data-error="Por favor informe seu nome">
                         </div>
 
                         <div class="input-group">
-                                <input class="input--style-3" type="password" placeholder="Senha" name="senha"
-                                required data-error="Por favor informe a senha">
+                            <input class="input--style-3" type="password" placeholder="Senha" name="senha" required
+                                data-error="Por favor informe a senha">
                         </div>
-                    <input type="checkbox" class="checkbox"> Lembrar-se de mim <br>
+
                         <div class="p-t-10">
-                                <button id="btn_entrar" class="btn btn--pill btn--green">Entrar</button>
+                            <button id="btn_entrar" class="btn btn--pill btn--green">Entrar</button>
                     </form>
 
-                        </div> <br>
-                            
-                        <p class="cor"></p>
-                        <a href="cadastro.html">
-                            <b>Quero me cadastrar</b>
-                        </a>
-                        </p><br>
+                </div> <br>
 
-                        <p class="cor">
-                            <a href="recuperar.html" target="blank">
-                                <b>Esqueci minha senha</b>
-                            </a>
-                        </p>
-                        <br>
-                    </form>
-                </div>
+                <p class="cor"></p>
+                <a href="cadastro.html">
+                    <b>Quero me cadastrar</b>
+                </a>
+                </p><br>
 
+                <p class="cor">
+                    <a href="https://grupopharmasensors.zendesk.com/hc/pt-br/requests/new" >
+                        <b>Esqueci minha senha</b>
+                    </a>
+                </p>
+                <br>
+                </form>
             </div>
+
         </div>
+    </div>
     </div>
 
 
@@ -97,14 +99,14 @@
 <!--Inicio da validação do login-->
 
 <script>
-     verificarAutenticacao();
+    verificarAutenticacao();
     function verificarAutenticacao() {
         if (sessionStorage.usuario_bandtec != undefined) {
             window.location.href = './interno/index.html';
         }
     }
     function entrar() {
-       //alert exibido quando o usuário entra.
+        //alert exibido quando o usuário entra.
         swal({
             title: "Entrando...",
             text: "Aguarde alguns instantes",
@@ -117,60 +119,60 @@
             method: "POST",
             body: formulario
         }).then(function (response) {
-            
+
             if (response.ok) {
                 response.json().then(function (resposta) {
                     sessionStorage.usuario_bandtec = resposta.nome;
                     verificarAutenticacao();
                 });
             } else {
-            swal({
-            title: "Erro!",
-            text: "Login ou senha inválidos.",
-            buttons: true,
-            closeOnClickOutside: true,
-        });
-            
+                swal({
+                    title: "Erro!",
+                    text: "Login ou senha inválidos.",
+                    buttons: true,
+                    closeOnClickOutside: true,
+                });
+
                 finalizar_aguardar();
             }
-            
-            });
-            return false;
+
+        });
+        return false;
     }
-// function verificarAutenticacao() {
-//     if (sessionStorage.usuario_bandtec != undefined) {
-//         window.location.href = './interno/index.html';
-//     }
-// }
-// function entrar() {
-//     aguardar();
-//     var formulario = new URLSearchParams(new FormData(form_login));
-//     fetch("/usuarios/entrar", {
-//         method: "POST",
-//         body: formulario
-//     }).then(function (response) {
-        
-//         if (response.ok) {
-//             response.json().then(function (resposta) {
-//                 sessionStorage.usuario_bandtec = resposta.nome;
-//                 verificarAutenticacao();
-//             });
-//         } else {
-//             console.log('Erro de login!');
-//             finalizar_aguardar();
-//         }
-//     });
-//     return false;
-// }
-// function aguardar() {
-//     btn_entrar.disabled = true;
-// }
-    
-function finalizar_aguardar() {
-    btn_entrar.disabled = false;
-   
-}
-    
-        
-    
+    // function verificarAutenticacao() {
+    //     if (sessionStorage.usuario_bandtec != undefined) {
+    //         window.location.href = './interno/index.html';
+    //     }
+    // }
+    // function entrar() {
+    //     aguardar();
+    //     var formulario = new URLSearchParams(new FormData(form_login));
+    //     fetch("/usuarios/entrar", {
+    //         method: "POST",
+    //         body: formulario
+    //     }).then(function (response) {
+
+    //         if (response.ok) {
+    //             response.json().then(function (resposta) {
+    //                 sessionStorage.usuario_bandtec = resposta.nome;
+    //                 verificarAutenticacao();
+    //             });
+    //         } else {
+    //             console.log('Erro de login!');
+    //             finalizar_aguardar();
+    //         }
+    //     });
+    //     return false;
+    // }
+    // function aguardar() {
+    //     btn_entrar.disabled = true;
+    // }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+
+    }
+
+
+
 </script>
