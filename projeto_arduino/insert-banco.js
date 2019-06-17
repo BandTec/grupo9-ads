@@ -90,9 +90,9 @@ function registrar_leitura(temperatura, umidade) {
     banco.conectar().then(() => {
 
         return banco.sql.query(`INSERT into dados ( temp, umid, hora, fkGeladeira)
-                                values ( ${temperatura - 2}, ${umidade}, CURRENT_TIMESTAMP,  2);
+                                values ( ${temperatura - 5}, ${umidade}, CURRENT_TIMESTAMP,  2);
                                 INSERT into dados ( temp, umid, hora, fkGeladeira)
-                                values ( ${temperatura - 17}, ${umidade}, CURRENT_TIMESTAMP,  1);
+                                values ( ${temperatura - 22}, ${umidade}, CURRENT_TIMESTAMP,  1);
                                 INSERT into dados ( temp, umid, hora, fkGeladeira)
                                 values ( ${(temperatura * 4)-120}, ${umidade}, CURRENT_TIMESTAMP,  3);`);
 
